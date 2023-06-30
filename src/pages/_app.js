@@ -15,6 +15,7 @@ import "@/styles/globals.css";
 import "@/styles/tevily.css";
 import "@/styles/tevily-responsive.css";
 
+
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ContextProvider>
