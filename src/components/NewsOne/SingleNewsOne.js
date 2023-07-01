@@ -49,7 +49,7 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
           <p>
           
               <Fragment>
-                <span>t</span>
+                <span>{date}</span>
                 <br />
               </Fragment>
         

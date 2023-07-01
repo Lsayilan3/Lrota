@@ -25,7 +25,6 @@ const NewsOne = () => {
       // Backend'den gelen verilere göre col değerlerini ayarla
       const colValuesFromBackend = firstFiveData.map((destination) => destination.col);
       setColValues(colValuesFromBackend);
-      console.log(response.data)
     } catch (error) {
       console.log("API çekme hatası", error);
     }

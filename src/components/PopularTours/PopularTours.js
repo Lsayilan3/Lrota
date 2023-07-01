@@ -3,8 +3,13 @@ import dynamic from "next/dynamic";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import SingleTour from "./SingleTour";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 const TinySlider = dynamic(() => import("tiny-slider-react"), { ssr: false });
+
+
 
 const settings = {
   lazyload: true,
@@ -31,6 +36,31 @@ const settings = {
 };
 
 const PopularTours = () => {
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerLists";
+
+  const [data, setData] = useState([]);
+  const [colValues, setColValues] = useState([]);
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      const firstFiveData = response.data.slice(0, 10); // İlk 5 veriyi al
+      setData(firstFiveData);
+
+      // Backend'den gelen verilere göre col değerlerini ayarla
+      const colValuesFromBackend = firstFiveData.map((destination) => destination.col);
+      setColValues(colValuesFromBackend);
+      console.log(response.data.data)
+    } catch (error) {
+      console.log("API çekme hatası", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
+
   return (
     <section className="popular-tours">
       <div className="popular-tours__container">
@@ -42,8 +72,8 @@ const PopularTours = () => {
           <Col xl={12}>
             <div className="popular-tours__carousel">
               <TinySlider settings={settings}>
-                {popularTours.map((tour) => (
-                  <SingleTour key={tour.id} tour={tour} />
+                {data.map((data) => (
+                  <SingleTour  data={data} />
                 ))}
               </TinySlider>
             </div>

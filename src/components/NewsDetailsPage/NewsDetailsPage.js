@@ -15,14 +15,13 @@ const NewsDetailsPage = () => {
       .get("https://localhost:44375/WebAPI/api/haberlerCategories/getall")
       .then((response) => {
         setCategoriesData(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
   const selectedCategory = categoriesData.find(
-    (category) => category.HaberlerCategoryId === Number(haberId)
+    (category) => category.haberlerCategoryId === Number(haberId)
   );
   return (
     <section className="news-details">
