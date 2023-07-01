@@ -1,19 +1,45 @@
+import axios from "axios";
 import Link from "next/link";
 import React, { Fragment } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Image } from "react-bootstrap";
 
-const SingleNewsOne = ({ news = {}, newsTwo = false }) => {
-  const { image, title, author, comments, date } = news;
+const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
+
+
+  const { haberId, author, comments, date, photo, title } = data || {};
+
+  const [spots, setSpots] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (haberId) {
+          const response = await axios.get(`https://localhost:44375/WebAPI/api/haberlers/getlist?haberId=${haberId}`);
+          setSpots(response.data.data);
+        } else {
+          const response = await axios.get("https://localhost:44375/WebAPI/api/haberlers/getall");
+          setSpots(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [haberId]);
+
 
   return (
     <div
+
       className={
         newsTwo ? "news-one__single animated fadeInUp" : "news-one__single"
       }
       style={{ userSelect: newsTwo ? "none" : "unset" }}
     >
       <div className="news-one__img">
-        <Image src={require(`@/images/blog/${image}`).default.src} alt="" />
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBqJiRfhMGpzmZrt6Cf1l7sfgV8T4F5ahZHg&usqp=CAU" alt="" />
         <Link href="/news-details">
           <a>
             <span className="news-one__plus"></span>
@@ -21,12 +47,12 @@ const SingleNewsOne = ({ news = {}, newsTwo = false }) => {
         </Link>
         <div className="news-one__date">
           <p>
-            {date.split(" ").map((t, i) => (
-              <Fragment key={i}>
-                <span>{t}</span>
+          
+              <Fragment>
+                <span>t</span>
                 <br />
               </Fragment>
-            ))}
+        
           </p>
         </div>
       </div>
@@ -50,7 +76,7 @@ const SingleNewsOne = ({ news = {}, newsTwo = false }) => {
           </li>
         </ul>
         <h3 className="news-one__title">
-          <Link href="/news-details">{title}</Link>
+          <Link href={`/news-details/${haberId}`}>{title}</Link>
         </h3>
       </div>
     </div>

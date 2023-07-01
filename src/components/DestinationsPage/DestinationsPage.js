@@ -5,7 +5,7 @@ import SingleDestination from "../DestinationsOne/SingleDestination";
 import axios from "axios";
 
 const DestinationsPage = () => {
-  const apiUrl = "https://api.kapadokyadavet.com/api/orAcilises";
+  const apiUrl = "https://localhost:44375/WebAPI/api/hedefLists";
 
   const [data, setData] = useState([]);
   const [colValues, setColValues] = useState([]);
@@ -16,7 +16,7 @@ const DestinationsPage = () => {
       setData(response.data);
 
       // Backend'den gelen verilere göre col değerlerini ayarla
-      const colValuesFromBackend = response.data.map((destination) => destination.detay);
+      const colValuesFromBackend = response.data.map((destination) => destination.col);
       setColValues(colValuesFromBackend);
     } catch (error) {
       console.log("API çekme hatası", error);
@@ -40,7 +40,7 @@ const DestinationsPage = () => {
             <SingleDestination
             key={destination.id}
             data={destination}
-            detay={colValues[index]}
+            col={colValues[index]}
             getApiUrlPhoto={getApiUrlPhoto}
           />
           ))}

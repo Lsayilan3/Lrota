@@ -5,6 +5,10 @@ import { Image } from "react-bootstrap";
 import AuthorOne from "./AuthorOne";
 import CommentForm from "./CommentForm";
 import CommentOne from "./CommentOne";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 
 const {
   image,
@@ -19,7 +23,28 @@ const {
   comments,
 } = newsDetailsPage;
 
-const NewsDetailsLeft = () => {
+const NewsDetailsLeft = ({categories,detayy}) => {
+  const router = useRouter();
+  const { haberId } = router.query;
+
+  
+  const {  textOne, textTwo, textTree,textFour} = categories || {};
+  const [categoriesData, setCategoriesData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://localhost:44375/WebAPI/api/haberlerCategories/getall")
+      .then((response) => {
+        setCategoriesData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  const selectedCategory = categoriesData.find(
+   (category) => category.hedefListCategoryId === Number(haberId)
+ );
   return (
     <div className="news-details__left">
       <div className="news-details__img">
@@ -55,11 +80,20 @@ const NewsDetailsLeft = () => {
           </li>
         </ul>
         <h3 className="news-details__title">{title}</h3>
-        {texts.map((text, index) => (
-          <p key={index} className={`news-details__text-${index + 1}`}>
-            {text}
+     
+          <p  className="news-details__text">
+            {textOne}
           </p>
-        ))}
+          <p  className="news-details__text">
+            {textTwo}
+          </p>
+          <p  className="news-details__text">
+            {textTree}
+          </p>
+          <p  className="news-details__text">
+            {textFour}
+          </p>
+     
       </div>
       <div className="news-details__bottom">
         <p className="news-details__tags">

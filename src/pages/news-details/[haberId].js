@@ -7,10 +7,11 @@ import React from "react";
 const NewsDetails = () => {
   const router = useRouter();
   const { haberId } = router.query;
+
   return (
     <Layout pageTitle="News Details">
       <PageHeader title="News Details" />
-      <NewsDetailsPage  />
+      <NewsDetailsPage haberId={haberId} />
     </Layout>
   );
 };

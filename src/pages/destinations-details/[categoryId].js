@@ -16,6 +16,3 @@ const DestinationsDetails = () => {
 };
 
 export default DestinationsDetails;
-
-
-// https://localhost:44375/WebAPI/api/hedefLists/getall

@@ -16,7 +16,9 @@ const DestinationsDetailsLeft = ({categories,detayy}) => {
   const { categoryId } = router.query;
 
   
-  const {  textOne, textTwo, detayLeft, detayRight ,question, answer } =
+  const {  textOne, textTwo, detayLeftOne, detayRightOne ,detayLeftTwo, detayRightTwo ,detayLeftTree, detayRightTree ,
+    detayLeftFour, detayRightFour ,detayLeftFive, detayRightFive ,questionOne, answerOne,questionTwo, answerTwo, 
+    questionTree, answerTree,} =
      categories || {};
 
      const [categoriesData, setCategoriesData] = useState([]);
@@ -63,42 +65,42 @@ const DestinationsDetailsLeft = ({categories,detayy}) => {
           
             <li>
               <div className="destinations-details__overview-left">
-                <p>{detayLeft}</p>
+                <p>{detayLeftOne}</p>
               </div>
               <div className="destinations-details__overview-right">
-                <p>{detayRight}</p>
+                <p>{detayRightOne}</p>
               </div>
             </li>
             <li>
               <div className="destinations-details__overview-left">
-                <p>{detayLeft}</p>
+                <p>{detayLeftTwo}</p>
               </div>
               <div className="destinations-details__overview-right">
-                <p>{detayRight}</p>
+                <p>{detayRightTwo}</p>
               </div>
             </li>
             <li>
               <div className="destinations-details__overview-left">
-                <p>{detayLeft}</p>
+                <p>{detayLeftTree}</p>
               </div>
               <div className="destinations-details__overview-right">
-                <p>{detayRight}</p>
+                <p>{detayRightTree}</p>
               </div>
             </li>
             <li>
               <div className="destinations-details__overview-left">
-                <p>{detayLeft}</p>
+                <p>{detayLeftFour}</p>
               </div>
               <div className="destinations-details__overview-right">
-                <p>{detayRight}</p>
+                <p>{detayRightFour}</p>
               </div>
             </li>
             <li>
               <div className="destinations-details__overview-left">
-                <p>{detayLeft}</p>
+                <p>{detayLeftFive}</p>
               </div>
               <div className="destinations-details__overview-right">
-                <p>{detayRight}</p>
+                <p>{detayRightFive}</p>
               </div>
             </li>
    
@@ -109,36 +111,36 @@ const DestinationsDetailsLeft = ({categories,detayy}) => {
   <div class="accrodion-grp faq-one-accrodion">
     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-      {question}
+      {questionOne}
       </button>
     </h2>
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div class="accordion-body">
-      {answer}
+      {answerOne}
       </div>
     </div>
   </div>
   <div class="accrodion-grp faq-one-accrodion">
     <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-        Accordion Item #2
+      {questionTwo}
       </button>
     </h2>
     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
       <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      {answerTwo}
       </div>
     </div>
   </div>
   <div class="accrodion-grp faq-one-accrodion">
     <h2 class="accordion-header" id="panelsStayOpen-headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Accordion Item #3
+      {questionTree}
       </button>
     </h2>
     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
       <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      {answerTree}
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Col, Image } from "react-bootstrap";
 
-const SingleDestination = ({ data, detay }) => {
+const SingleDestination = ({ data, col }) => {
   const { categoryId, photo, title } = data || {};
 
   const [spots, setSpots] = useState([]);
@@ -24,19 +24,16 @@ const SingleDestination = ({ data, detay }) => {
     };
     fetchData();
   }, [categoryId]);
-  const getApiUrlPhoto = "https://api.kapadokyadavet.com";
-
 
   return (
-    <Col xl={detay} lg={detay}>
+    <Col xl={col} lg={col}>
       <div className="destinations-one__single">
         <div className="destinations-one__img">
-        <Image src={getApiUrlPhoto + photo} alt="" />
-
+          <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBqJiRfhMGpzmZrt6Cf1l7sfgV8T4F5ahZHg&usqp=CAU" alt="" />
           <div className="destinations-one__content">
             <p className="destinations-one__sub-title">{title}</p>
             <h2 className="destinations-one__title">
-              <Link href={`/${categoryId}`} passHref>
+              <Link href={`/destinations-details/${categoryId}`} passHref>
                 <a>{title}</a>
               </Link>
             </h2>
