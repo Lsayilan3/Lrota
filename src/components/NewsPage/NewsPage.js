@@ -2,21 +2,42 @@ import newsPage from "@/data/newsPage";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SingleNewsOne from "../NewsOne/SingleNewsOne";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 const NewsPage = () => {
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/haberlers";
+
+  const [data, setData] = useState([]);
+  const [colValues, setColValues] = useState([]);
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setData(response.data);
+    } catch (error) {
+      console.log("API çekme hatası", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
   return (
     <section className="news-one">
       <Container>
         <Row>
-          {newsPage.map((news) => (
+          {data.map((data) => (
             <Col
               xl={4}
               lg={6}
               md={6}
-              key={news.id}
+              key={data.id}
               className="animated fadeInUp"
             >
-              <SingleNewsOne news={news} />
+              <SingleNewsOne data={data} />
             </Col>
           ))}
         </Row>

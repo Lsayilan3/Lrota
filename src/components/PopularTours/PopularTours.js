@@ -39,18 +39,13 @@ const PopularTours = () => {
 
   const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerLists";
 
-  const [data, setData] = useState([]);
+  const [popularTours, setPopularTours] = useState([]);
   const [colValues, setColValues] = useState([]);
 
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
-      const firstFiveData = response.data.slice(0, 10); // İlk 5 veriyi al
-      setData(firstFiveData);
-
-      // Backend'den gelen verilere göre col değerlerini ayarla
-      const colValuesFromBackend = firstFiveData.map((destination) => destination.col);
-      setColValues(colValuesFromBackend);
+      setPopularTours(response.data);
       console.log(response.data.data)
     } catch (error) {
       console.log("API çekme hatası", error);
@@ -72,8 +67,8 @@ const PopularTours = () => {
           <Col xl={12}>
             <div className="popular-tours__carousel">
               <TinySlider settings={settings}>
-                {data.map((data) => (
-                  <SingleTour  data={data} />
+                {popularTours.map((tour) => (
+                  <SingleTour key={tour.enPopulerListId} tour={tour} />
                 ))}
               </TinySlider>
             </div>

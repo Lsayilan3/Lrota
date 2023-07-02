@@ -16,6 +16,7 @@ const GalleryOne = () => {
           {galleryData.map((image, index) => (
             <SingleGallery key={index} image={image} />
           ))}
+      
         </ul>
       </div>
     </section>

@@ -2,10 +2,31 @@ import popularToursTwo from "@/data/popularToursTwo";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SingleTour from "./SingleTour";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 const { tagline, title, popularTours } = popularToursTwo;
 
 const PopularToursTwo = ({ toursPage = false }) => {
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerLists";
+
+  const [popularTours, setPopularTours] = useState([]);
+  const [colValues, setColValues] = useState([]);
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setPopularTours(response.data);
+      console.log(response.data.data)
+    } catch (error) {
+      console.log("API çekme hatası", error);
+    }
+  };
+  useEffect(() => {
+    apiCek();
+  }, []);
   return (
     <section className="popular-tours-two">
       <Container>

@@ -47,12 +47,12 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
         </Link>
         <div className="news-one__date">
           <p>
-          
-              <Fragment>
-                <span>{date}</span>
-                <br />
-              </Fragment>
-        
+
+            <Fragment>
+              <span>{date}</span>
+              <br />
+            </Fragment>
+
           </p>
         </div>
       </div>
@@ -76,7 +76,12 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
           </li>
         </ul>
         <h3 className="news-one__title">
-          <Link href={`/news-details/${haberId}`}>{title}</Link>
+          <Link href={`/news-details/${haberId}`}>
+            <a>
+              <span className="news-one__plus">{title}</span>
+            </a>
+          </Link>
+
         </h3>
       </div>
     </div>

@@ -5,7 +5,7 @@ import TourDetailsTwo from "./TourDetailsTwo";
 const TourDetailsPage = () => {
   return (
     <>
-      <TourDetailsOne />
+    
       <TourDetailsTwo />
     </>
   );
