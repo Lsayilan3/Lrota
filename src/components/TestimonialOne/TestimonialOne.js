@@ -3,6 +3,9 @@ import dynamic from "next/dynamic";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import SingleTestimonial from "./SingleTestimonial";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const TinySlider = dynamic(() => import("tiny-slider-react"), { ssr: false });
 
@@ -33,6 +36,24 @@ const settings = {
 const { shape1, shape2, tagline, title, testimonials, bg } = testimonialOne;
 
 const TestimonialOne = ({ aboutPage = false }) => {
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/hikayelers";
+
+  const [dataa, setDataa] = useState([]);
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setDataa(response.data);
+    } catch (error) {
+      console.log("API çekme hatası", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
+
   return (
     <section
       className={
@@ -63,11 +84,8 @@ const TestimonialOne = ({ aboutPage = false }) => {
           <Col xl={12}>
             <div className="testimonial-one__carousel">
               <TinySlider settings={settings}>
-                {testimonials.map((testimonial) => (
-                  <SingleTestimonial
-                    key={testimonial.id}
-                    testimonial={testimonial}
-                  />
+                {dataa.map((data) => (
+                  <SingleTestimonial key={data.hikayelerId} data={data} />
                 ))}
               </TinySlider>
             </div>

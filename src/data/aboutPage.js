@@ -2,20 +2,20 @@ import image from "@/images/resources/about-page-img.jpg";
 
 const aboutPage = {
   image,
-  tagline: "Learn about us",
-  title: "Dare to Explore with Tevily Agency",
-  text1: "A Simply Perfect Place to Get Lost",
+  tagline: "Hakkımızda bilgi edinin",
+  title: "Limitsiz Rota Ajans ile Keşfedin",
+  text1: "Kaybolmak İçin Mükemmel Bir Yer",
   text2:
-    "We are trusted by our clients and have a reputation for the best services in the field. Lorem ipsum is simply free text dolor sit amett consectetur adipiscing elit. It is a long established fact that a reader will be distracted by the readable content of a page.",
+    "Müşterilerimiz bize güveniyor ve bu alandaki en iyi hizmetler konusunda bir üne sahibiz. Ekibimiz uzmanlık, yenilikçilik ve müşteri odaklılıkla çalışarak, her zaman beklentilerin ötesine geçmeyi hedefliyor. Memnuniyetiniz bizim için önemlidir. ",
   progress: [
     {
       id: 1,
-      title: "Best Services",
+      title: "En İyi Hizmetler",
       count: 77,
     },
     {
       id: 2,
-      title: "Tour Agents",
+      title: "Tur Acenteleri",
       count: 38,
     },
   ],

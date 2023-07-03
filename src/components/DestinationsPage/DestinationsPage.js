@@ -38,7 +38,7 @@ const DestinationsPage = () => {
         <Masonry className="row position-relative">
           {data.map((destination, index) => (
             <SingleDestination
-            key={destination.id}
+            key={destination.hedefListId}
             data={destination}
             col={colValues[index]}
             getApiUrlPhoto={getApiUrlPhoto}

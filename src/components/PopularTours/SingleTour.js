@@ -19,8 +19,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
         } else {
           const response = await axios.get("https://localhost:44375/WebAPI/api/enPopulerLists/getall");
           setSpots(response.data);
-        }
-        console.log(response.data)
+        } 
       } catch (error) {
         console.log(error);
       }

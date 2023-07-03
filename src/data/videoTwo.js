@@ -3,8 +3,8 @@ import bg from "@/images/backgrounds/video-one-two-bg.jpg";
 const videoTwo = {
   bg,
   videoId: "Get7rqXYrbQ",
-  tagline: "Are you ready to travel?",
-  title: "Tevily is a World Leading \n Online Tour Booking Platform",
+  tagline: "Seyahat etmeye hazır mısın?",
+  title: "Limitsiz Rota, Türkiye Lideri Online Tur Platformudur",
 };
 
 export default videoTwo;

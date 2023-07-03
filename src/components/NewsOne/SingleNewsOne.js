@@ -1,8 +1,6 @@
 import axios from "axios";
 import Link from "next/link";
-import React, { Fragment } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Image } from "react-bootstrap";
 
 const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {

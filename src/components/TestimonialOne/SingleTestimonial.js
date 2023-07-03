@@ -1,22 +1,37 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Image } from "react-bootstrap";
 
-const SingleTestimonial = ({ testimonial }) => {
-  const {
-    image,
-    description,
-    review,
-    client: { name, role },
-  } = testimonial;
+
+
+const SingleTestimonial = ({ data }) => {
+
+  const { description, review, name, role } = data || {};
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/hikayelers";
+
+  const [dataa, setDataa] = useState([]);
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setDataa(response.data);
+    } catch (error) {
+      console.log("API çekme hatası", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
 
   return (
     <div>
       <div style={{ userSelect: "none" }} className="testimonial-one__single">
         <div className="testimonial-one__img">
-          <Image
-            src={require(`@/images/testimonial/${image}`).default.src}
-            alt=""
-          />
+          <Image src="" alt="" />
         </div>
         <div className="testimonail-one__content">
           <div className="testimonial-one__top-revivew-box">

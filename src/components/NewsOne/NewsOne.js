@@ -41,15 +41,15 @@ const NewsOne = () => {
             <Col xl={9} lg={9}>
               <div className="news-one__top-left">
                 <div className="section-title text-left">
-                  <span className="section-title__tagline">From the blog postA</span>
-                  <h2 className="section-title__title">News & Articles</h2>
+                  <span className="section-title__tagline">Blog Gönderisinden</span>
+                  <h2 className="section-title__title">Haberler & Makaleler</h2>
                 </div>
               </div>
             </Col>
             <Col xl={3} lg={3}>
               <div className="news-one__top-right">
-                <Link href="/news-details">
-                  <a className="news-one__btn thm-btn">View All posts</a>
+                <Link href="/news">
+                  <a className="news-one__btn thm-btn">Tüm Haberler</a>
                 </Link>
               </div>
             </Col>
@@ -59,7 +59,7 @@ const NewsOne = () => {
           <Row>
             
             {data.map((data) => (
-              <Col xl={4} lg={4} key={data.id} className="animated fadeInUp">
+              <Col xl={4} lg={4} key={data.haberlerId} className="animated fadeInUp">
                 <SingleNewsOne data={data} />
               </Col>
             ))}

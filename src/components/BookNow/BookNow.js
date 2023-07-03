@@ -20,8 +20,8 @@ const BookNow = () => {
                 <h2>{title}</h2>
               </div>
               <div className="book-now__right">
-                <a href="#" className="thm-btn book-now__btn">
-                  Book tour now
+                <a href="contact" className="thm-btn book-now__btn">
+                Şimdi tur rezervasyonu yapın
                 </a>
               </div>
             </div>

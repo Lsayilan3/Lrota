@@ -27,7 +27,7 @@ const testimonialOne = {
       description:
         "This is due to their best service, pricing and customer support. It’s throughly refresing to such a personal touch. Duis aute irure lupsum reprehenderit.",
       client: {
-        name: "Kevin Martinnnna",
+        name: "Kevin MartinAnasayfa",
         role: "Customer",
       },
     },

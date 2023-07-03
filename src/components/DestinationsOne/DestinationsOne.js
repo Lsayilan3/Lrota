@@ -38,7 +38,7 @@ const DestinationsOne = () => {
         <Row className="masonary-layout">
           {data.map((destination, index) => (
             <SingleDestination
-              key={destination.id}
+              key={destination.hedefListId}
               data={destination}
               col={colValues[index]}
               getApiUrlPhoto={getApiUrlPhoto}

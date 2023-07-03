@@ -2,8 +2,8 @@ import bg from "@/images/shapes/team-one-map.png";
 
 const teamOne = {
   bg,
-  tagline: "Professional people",
-  title: "Meet the Team",
+  tagline: "Profesyonel insan",
+  title: "Ekiple tanış",
   teams: [
     {
       id: 1,
