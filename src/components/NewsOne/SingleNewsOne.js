@@ -27,7 +27,7 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
     fetchData();
   }, [haberId]);
 
-
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <div
 
@@ -37,7 +37,7 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
       style={{ userSelect: newsTwo ? "none" : "unset" }}
     >
       <div className="news-one__img">
-        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBqJiRfhMGpzmZrt6Cf1l7sfgV8T4F5ahZHg&usqp=CAU" alt="" />
+        <Image src={photoUrl + photo} alt={photo}  />
         <Link href="/news-details">
           <a>
             <span className="news-one__plus"></span>

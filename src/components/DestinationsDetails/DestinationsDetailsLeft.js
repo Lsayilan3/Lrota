@@ -18,7 +18,7 @@ const DestinationsDetailsLeft = ({categories,detayy}) => {
   
   const {  textOne, textTwo, detayLeftOne, detayRightOne ,detayLeftTwo, detayRightTwo ,detayLeftTree, detayRightTree ,
     detayLeftFour, detayRightFour ,detayLeftFive, detayRightFive ,questionOne, answerOne,questionTwo, answerTwo, 
-    questionTree, answerTree,} =
+    questionTree, answerTree,photo} =
      categories || {};
 
      const [categoriesData, setCategoriesData] = useState([]);
@@ -37,10 +37,12 @@ const DestinationsDetailsLeft = ({categories,detayy}) => {
        const selectedCategory = categoriesData.find(
         (category) => category.hedefListCategoryId === Number(categoryId)
       );
+
+      const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <div className="destinations-details__left">
       <div className="destinations-details__img">
-        <Image src={image.src} alt="" />
+        <Image src={photoUrl + photo} alt={photo || ""} />
       </div>
       <div className="destinations-details__discover">
         <h3 className="destinations-details__title">Discover Spain</h3>

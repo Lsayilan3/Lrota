@@ -33,6 +33,8 @@ const NewsOne = () => {
   useEffect(() => {
     apiCek();
   }, []);
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <section className="news-one">
       <Container>
@@ -60,7 +62,7 @@ const NewsOne = () => {
             
             {data.map((data) => (
               <Col xl={4} lg={4} key={data.haberlerId} className="animated fadeInUp">
-                <SingleNewsOne data={data} />
+                <SingleNewsOne photoUrl={photoUrl} data={data} />
               </Col>
             ))}
         
