@@ -278,21 +278,21 @@ const TourDetailsPage = () => {
    
       </div>
       <h3 className="tour-details-two__title review-scores__title">
-        Review Scores
+İnceleme Puanları
       </h3>
       <div className="tour-details__review-score">
         <div className="tour-details__review-score-ave">
           <div className="my-auto">
-            <h3>superb</h3>
+            <h3></h3>
             <p>
               <i className="fa fa-star"></i> Super
             </p>
           </div>
         </div>
         <div className="tour-details__review-score__content">
-          {reviewScore.map((review) => (
-            <ReviewScoreBar review={review} key={review.id} />
-          ))}
+        
+            <ReviewScoreBar  />
+      
         </div>
       </div>
       <ReviewForm reviews={reviews} />
