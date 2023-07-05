@@ -1,16 +1,39 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { SwiperSlide } from "swiper/react";
 
-const SingleSlide = ({ slide = {} }) => {
-  const { bg, subTitle, title } = slide;
+const SingleSlide = ({ slide = {},data }) => {
+  const { bg } = slide;
+
+  const { subTitle,title , photo, } = data || {};
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/sliders";
+
+  const [spots, setSpots] = useState([]);;
+
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setSpots(response.data);
+    } catch (error) {
+      console.log("API çekme hatası", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
 
   return (
     <SwiperSlide>
       <div
         className="image-layer"
         style={{
-          backgroundImage: `url(${bg.src})`,
+          backgroundImage: `url(${photoUrl + photo})`,
         }}
       ></div>
       <div className="image-layer-overlay"></div>

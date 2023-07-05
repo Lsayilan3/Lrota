@@ -27,7 +27,11 @@ const DestinationsOne = () => {
     apiCek();
   }, []);
 
-  const getApiUrlPhoto = "https://api.kapadokyadavet.com";
+  const photoUrl = "https://localhost:44375/WebAPI/";
+
+
+
+
   return (
     <section className="destinations-one">
       <Container>
@@ -41,7 +45,7 @@ const DestinationsOne = () => {
               key={destination.hedefListId}
               data={destination}
               col={colValues[index]}
-              getApiUrlPhoto={getApiUrlPhoto}
+              photoUrl={photoUrl}
             />
           ))}
         </Row>

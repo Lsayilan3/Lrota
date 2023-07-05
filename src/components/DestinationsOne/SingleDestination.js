@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { Col, Image } from "react-bootstrap";
 
 const SingleDestination = ({ data, col }) => {
-  const { categoryId, photo, title } = data || {};
+  const { categoryId, photo, title,tours } = data || {};
 
   const [spots, setSpots] = useState([]);
+  const [bphoto, setBphoto] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,16 +23,21 @@ const SingleDestination = ({ data, col }) => {
         console.log(error);
       }
     };
+
     fetchData();
   }, [categoryId]);
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
+
+
 
   return (
     <Col xl={col} lg={col}>
       <div className="destinations-one__single">
         <div className="destinations-one__img">
-          <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBqJiRfhMGpzmZrt6Cf1l7sfgV8T4F5ahZHg&usqp=CAU" alt="" />
+        <Image src={photoUrl + photo} alt={photo} />
           <div className="destinations-one__content">
-            <p className="destinations-one__sub-title">{title}</p>
+            <p className="destinations-one__sub-title">{tours}</p>
             <h2 className="destinations-one__title">
               <Link href={`/destinations-details/${categoryId}`} passHref>
                 <a>{title}</a>

@@ -10,23 +10,6 @@ const SingleTestimonial = ({ data }) => {
 
   const { description, review, name, role } = data || {};
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/hikayelers";
-
-  const [dataa, setDataa] = useState([]);
-
-  const apiCek = async () => {
-    try {
-      const response = await axios.get(apiUrl + "/getAll");
-      setDataa(response.data);
-    } catch (error) {
-      console.log("API çekme hatası", error);
-    }
-  };
-
-  useEffect(() => {
-    apiCek();
-  }, []);
-
   return (
     <div>
       <div style={{ userSelect: "none" }} className="testimonial-one__single">

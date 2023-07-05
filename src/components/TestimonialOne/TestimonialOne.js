@@ -32,7 +32,6 @@ const settings = {
     },
   },
 };
-
 const { shape1, shape2, tagline, title, testimonials, bg } = testimonialOne;
 
 const TestimonialOne = ({ aboutPage = false }) => {
@@ -68,26 +67,30 @@ const TestimonialOne = ({ aboutPage = false }) => {
       ) : (
         <>
           <div className="testimonial-one-shape-2 float-bob-y">
-            <Image src={shape1.src} alt="" />
+            <Image src="" alt="" />
           </div>
           <div className="testimonial-one-shape-3 animated slideInRight">
-            <Image src={shape2.src} alt="" />
+            <Image src="" alt="" />
           </div>
         </>
       )}
       <Container>
         <div className="section-title text-center">
-          <span className="section-title__tagline">{tagline}</span>
-          <h2 className="section-title__title">{title}</h2>
+          <span className="section-title__tagline">Geri Bildirimler</span>
+          <h2 className="section-title__title">Memnuniyet Hikayeleri</h2>
         </div>
         <Row>
           <Col xl={12}>
             <div className="testimonial-one__carousel">
-              <TinySlider settings={settings}>
-                {dataa.map((data) => (
-                  <SingleTestimonial key={data.hikayelerId} data={data} />
-                ))}
-              </TinySlider>
+              {dataa.length > 0 ? (
+                <TinySlider settings={settings}>
+                  {dataa.map((data) => (
+                    <SingleTestimonial key={data.hikayelerId} data={data} />
+                  ))}
+                </TinySlider>
+              ) : (
+                <p>Veriler yükleniyor...</p>
+              )}
             </div>
           </Col>
         </Row>
