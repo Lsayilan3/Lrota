@@ -7,7 +7,7 @@ import { Image } from "react-bootstrap";
 
 const SingleTour = ({ tour = {}, userSelect = false }) => {
 
-  const { populerId, suberb, rate, kacGun, yasOrani, hangiSehir } = tour || {};
+  const { populerId, title, superb, rate, kacGun, yasOrani, hangiSehir,photo } = tour || {};
   const [spots, setSpots] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
     };
     fetchData();
   }, [populerId]);
-
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <div>
       <div
@@ -35,7 +35,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
       >
         <div className="popular-tours__img">
           <Image
-            src="https://www.kapadokyadavet.com/assets/img/aaimg/organr_300x300.jpg"
+            src={photoUrl + photo}
             alt=""
           />
           <div className="popular-tours__icon">
@@ -48,10 +48,10 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
         </div>
         <div className="popular-tours__content">
           <div className="popular-tours__stars">
-            <i className="fa fa-star"></i> {suberb} Superb
+            <i className="fa fa-star"></i> {superb} Superb
           </div>
           <h3 className="popular-tours__title">
-            <Link href="/tour-details">Tour Başlık Eklenecek</Link>
+            <Link href="/tour-details">{title}</Link>
           </h3>
           <p className="popular-tours__rate">
             <span>${rate}</span> / Per Person

@@ -1,18 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 
-const SingleGallery = ({ image = "" }) => {
+const SingleGallery = ({ image = "" ,data}) => {
+
+  
+  const { subTitle,title , photo, } = data || {};
+
+
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
+
+
   return (
     <li className="animated fadeInUp">
-      <div className="gallery-one__img-box">
-        <Image src="https://www.kapadokyadavet.com/assets/img/aaimg/organr_300x300.jpg" alt="" />
-        <div className="gallery-one__iocn">
-          <a href={`@/images/gallery/${image}`}>
-            <i className="fab fa-instagram"></i>
-          </a>
-        </div>
+    <div className="gallery-one__img-box">
+      <Image src={photoUrl + photo} alt={photo} />
+      <div className="gallery-one__iocn">
+        <a href={`@/images/gallery/${photo}`}>
+          <i className="fab fa-instagram"></i>
+        </a>
       </div>
-    </li>
+    </div>
+  </li>
   );
 };
 

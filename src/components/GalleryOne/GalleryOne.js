@@ -1,22 +1,42 @@
 import galleryOne from "@/data/galleryOne";
 import React from "react";
 import SingleGallery from "./SingleGallery";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 const { bg, galleryData } = galleryOne;
 
 const GalleryOne = () => {
+  const apiUrl = "https://localhost:44375/WebAPI/api/mediaPhotoes";
+
+  const [data, setData] = useState([]);;
+
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setData(response.data);
+    } catch (error) {
+      console.log("API çekme hatası ne", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
+
   return (
-    <section className="gallery-one">
+   <section className="gallery-one">
       <div
         className="gallery-one-bg"
-        style={{ backgroundImage: ` url(${bg.src})` }}
+        style={{ backgroundImage: `url(${bg.src})` }}
       ></div>
       <div className="gallery-one__container-box clearfix">
         <ul className="list-unstyled gallery-one__content clearfix">
-          {galleryData.map((image, index) => (
-            <SingleGallery key={index} image={image} />
+          {data.map((data) => (
+            <SingleGallery   key={data.mediaPhotoId} data={data} />
           ))}
-      
         </ul>
       </div>
     </section>

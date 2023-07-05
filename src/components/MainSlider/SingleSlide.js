@@ -8,23 +8,7 @@ const SingleSlide = ({ slide = {},data }) => {
 
   const { subTitle,title , photo, } = data || {};
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/sliders";
 
-  const [spots, setSpots] = useState([]);;
-
-
-  const apiCek = async () => {
-    try {
-      const response = await axios.get(apiUrl + "/getAll");
-      setSpots(response.data);
-    } catch (error) {
-      console.log("API çekme hatası", error);
-    }
-  };
-
-  useEffect(() => {
-    apiCek();
-  }, []);
 
   const photoUrl = "https://localhost:44375/WebAPI/";
 

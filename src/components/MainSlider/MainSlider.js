@@ -41,6 +41,7 @@ const MainSlider = () => {
   useEffect(() => {
     apiCek();
   }, []);
+  
   return (
     <section className="main-slider">
       <Swiper className="thm-swiper__slider" {...mainSlideOptions}>

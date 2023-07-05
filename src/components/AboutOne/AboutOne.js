@@ -1,5 +1,8 @@
 import aboutOne from "@/data/aboutOne";
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 
 const {
@@ -15,6 +18,29 @@ const {
 } = aboutOne;
 
 const AboutOne = () => {
+
+  const apiUrl = "https://localhost:44375/WebAPI/api/avantajs";
+
+  const [data, setData] = useState({ photo: "" });
+
+
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setData(response.data[0]);
+    } catch (error) {
+      console.log("API çekme hatası ne", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
+  
+
   return (
     <section className="about-one">
       <div className="about-one-shape-1 animated slideInLeft">
@@ -29,7 +55,7 @@ const AboutOne = () => {
             <div className="about-one__left">
               <div className="about-one__img-box">
                 <div className="about-one__img">
-                  <Image src={about.src} alt="" />
+                  <Image src={photoUrl + data?.photo} alt={data?.photo || ""} />
                 </div>
                 <div className="about-one__call">
                   <div className="about-one__call-icon">

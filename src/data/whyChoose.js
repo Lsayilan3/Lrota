@@ -1,11 +1,11 @@
-import bg from "@/images/backgrounds/why-choose-left-bg.jpg";
+import bg from "@/images/backgrounds/jpg.jpg";
 import bg2 from "@/images/shapes/why-choose-right-map.png";
 
 const whyChoose = {
   bg,
   bg2,
   toggleText: " Trips \n & tours",
-  title: "Neden Limitsiz Rota'yı Seçmelisiniz?",
+  title: "Neden Limitsiz Rota'yı ",
   tagline: "Avantaj listelerimiz",
   description:
     "Limitsiz Rota, geniş tur seçenekleri ve memnuniyet garantisiyle seyahatlerinizi unutulmaz kılıyor. Uygun fiyatlar, eşsiz deneyimler ile unutulmaz seyahatler sunuyoruz",

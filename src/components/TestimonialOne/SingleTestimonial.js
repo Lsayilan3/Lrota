@@ -8,13 +8,13 @@ import { Image } from "react-bootstrap";
 
 const SingleTestimonial = ({ data }) => {
 
-  const { description, review, name, role } = data || {};
-
+  const { description, review, name, role, photo } = data || {};
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <div>
       <div style={{ userSelect: "none" }} className="testimonial-one__single">
         <div className="testimonial-one__img">
-          <Image src="" alt="" />
+          <Image src={photoUrl + photo} alt={photo} />
         </div>
         <div className="testimonail-one__content">
           <div className="testimonial-one__top-revivew-box">

@@ -53,6 +53,8 @@ const TestimonialOne = ({ aboutPage = false }) => {
     apiCek();
   }, []);
 
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <section
       className={
@@ -85,7 +87,7 @@ const TestimonialOne = ({ aboutPage = false }) => {
               {dataa.length > 0 ? (
                 <TinySlider settings={settings}>
                   {dataa.map((data) => (
-                    <SingleTestimonial key={data.hikayelerId} data={data} />
+                    <SingleTestimonial photoUrl={photoUrl} key={data.hikayelerId} data={data} />
                   ))}
                 </TinySlider>
               ) : (
