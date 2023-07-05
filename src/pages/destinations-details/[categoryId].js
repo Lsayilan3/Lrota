@@ -8,8 +8,8 @@ const DestinationsDetails = () => {
   const { categoryId } = router.query;
 
   return (
-    <Layout pageTitle="Destinations Details">
-      <PageHeader title="Destinations Details" page="Destinations" />
+    <Layout pageTitle="Varış Noktaları Detayı">
+      <PageHeader title="Varış Noktaları Detayı" page="Varış Noktaları" />
       <DestinationsDetailsPage categoryId={categoryId} />
     </Layout>
   );

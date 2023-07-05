@@ -5,8 +5,8 @@ import React from "react";
 
 const Destinations = () => {
   return (
-    <Layout pageTitle="Destinations">
-      <PageHeader title="Destinations" />
+    <Layout pageTitle="Varış Noktaları">
+      <PageHeader title="Varış Noktaları" />
       <DestinationsPage />
     </Layout>
   );

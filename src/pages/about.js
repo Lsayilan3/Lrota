@@ -11,8 +11,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <Layout pageTitle="About">
-      <PageHeader title="About" outerPage="Pages" />
+    <Layout pageTitle="Hakkında">
+      <PageHeader title="Hakkında" outerPage="Sayfa" />
       <AboutPage />
       <BookNow />
       <TestimonialOne aboutPage />

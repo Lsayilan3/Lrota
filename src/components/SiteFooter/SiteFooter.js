@@ -19,7 +19,7 @@ const SiteFooter = () => {
         <Container>
           <div className="site-footer__top-inner">
             <Row>
-              <Col xl={4} lg={6} md={6} className="animated fadeInUp">
+              <Col xl={5} lg={6} md={6} className="animated fadeInUp">
                 <div className="footer-widget__column footer-widget__about">
                   <div className="footer-widget__about-logo">
                     <Link href="/">
@@ -47,9 +47,9 @@ const SiteFooter = () => {
                   </ul>
                 </div>
               </Col>
-              <Col xl={2} lg={6} md={6} className="animated fadeInUp">
+              <Col xl={3} lg={6} md={6} className="animated fadeInUp">
                 <div className="footer-widget__column footer-widget__company clearfix">
-                  <h3 className="footer-widget__title">Firma</h3>
+                  <h3 className="footer-widget__title">Şirket</h3>
                   <ul className="footer-widget__company-list list-unstyled">
                     {companies.map(({ id, link, title }) => (
                       <li key={id}>
@@ -64,19 +64,7 @@ const SiteFooter = () => {
                     ))}
                   </ul>
                 </div>
-              </Col>
-              <Col xl={2} lg={6} md={6} className="animated fadeInUp">
-                <div className="footer-widget__column footer-widget__explore">
-                  <h3 className="footer-widget__title">Yolculuğa Çık</h3>
-                  <ul className="list-unstyled footer-widget__explore-list">
-                    {explore.map(({ id, title, link }) => (
-                      <li key={id}>
-                        <a href={link}>{title}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Col>
+              </Col>       
               <Col xl={4} lg={6} md={6} className="animated fadeInUp">
                 <div className="footer-widget__column footer-widget__newsletter">
                   <h3 className="footer-widget__title">Güncellemeleri Al</h3>

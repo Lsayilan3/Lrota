@@ -5,8 +5,8 @@ import React from "react";
 
 const Tours = () => {
   return (
-    <Layout pageTitle="Tours">
-      <PageHeader title="Popular Tours" page="Tours" />
+    <Layout pageTitle="Turlar">
+      <PageHeader title="Popüler Turlar" page="Turlar" />
       <PopularToursTwo toursPage />
     </Layout>
   );

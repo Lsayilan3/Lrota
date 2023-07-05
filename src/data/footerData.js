@@ -34,11 +34,11 @@ const footerData = {
     },
   ],
   companies: [
-    { id: 1, link: "/about", title: "About Us" },
-    { id: 2, link: "#", title: "Community Blog" },
-    { id: 3, link: "#", title: "Rewards" },
-    { id: 4, link: "#", title: "Work with Us" },
-    { id: 5, link: "#", title: "Meet the Team" },
+    { id: 1, link: "/tours", title: "Turlar" },
+    { id: 2, link: "/destinations", title: "Hedef Noktalar " },
+    { id: 3, link: "/news", title: "Haberler" },
+    { id: 4, link: "/about", title: "Hakkında" },
+    { id: 5, link: "/contact", title: "İletişim" },
   ],
   explore: [
     { id: 1, link: "#", title: "Account" },

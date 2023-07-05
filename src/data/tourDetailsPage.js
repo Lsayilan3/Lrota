@@ -104,27 +104,27 @@ export const tourDetailsLeft = {
     {
       id: 1,
       title: "Hizmetler",
-      star: 2,
+      star: 5,
     },
     {
       id: 2,
       title: "Konum",
-      star: 2,
+      star: 5,
     },
     {
       id: 3,
       title: "Kolaylıklar",
-      star: 2,
+      star: 5,
     },
     {
       id: 4,
       title: "Fiyat",
-      star: 2,
+      star: 5,
     },
     {
       id: 5,
       title: "Yiyecek",
-      star: 2,
+      star: 5,
     },
   ],
 };

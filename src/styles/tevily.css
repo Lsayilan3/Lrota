@@ -7508,3 +7508,10 @@ ul {
   border-bottom: 0;
   border-top: 1px solid #ebe6de;
 }
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+  background-color: #e8604c;
+  color: #fff;
+  border-color: #f00;
+}
+

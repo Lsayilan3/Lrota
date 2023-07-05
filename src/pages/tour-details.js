@@ -5,7 +5,7 @@ import React from "react";
 
 const TourDetails = () => {
   return (
-    <Layout pageTitle="Tours Details">
+    <Layout pageTitle="Tur Detayları">
       <MainSliderTwo />
       <TourDetailsPage />
     </Layout>

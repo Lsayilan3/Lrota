@@ -8,8 +8,8 @@ const NewsDetails = () => {
   const router = useRouter();
   const { haberId } = router.query;
   return (
-    <Layout pageTitle="News Details">
-      <PageHeader title="News Details" />
+    <Layout pageTitle="Haberler Detayı">
+      <PageHeader title="Haberler Detayı" />
       <NewsDetailsPage  />
     </Layout>
   );

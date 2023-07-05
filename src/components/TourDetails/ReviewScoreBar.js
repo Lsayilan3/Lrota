@@ -37,9 +37,10 @@ const ReviewScoreBar = () => {
       offset={{ top: 10 }}
       delayedCall={true}
       onChange={onVisibilityChange}
+      
     >
       <div>
-        <div className="tour-details__review-score__bar">
+        <div  className="tour-details__review-score__bar">
           <div className="tour-details__review-score__bar-top">
             <h3 style={{display:"inline-block", marginBottom: 6 }}>{dataa[0].hizmetler}</h3>
             <p  >{dataa[0].hizmetlerPuan}%</p>

@@ -8,7 +8,7 @@ const TourDetails = () => {
     const router = useRouter();
     const { populerId } = router.query;
   return (
-    <Layout pageTitle="Tours Details">
+    <Layout pageTitle="Tur Detayları">
       <MainSliderTwo />
       <TourDetailsPage populerId={populerId} />
     </Layout>

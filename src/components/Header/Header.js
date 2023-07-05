@@ -82,7 +82,9 @@ const Header = ({ pageTitle }) => {
                         src={pageTitle === "Home Two" ? logo2.src : logo.src}
                         alt=""
                       />
+                      
                     </a>
+                    
                   </Link>
                 </div>
                 <div className="main-menu-wrapper__main-menu">

@@ -5,8 +5,8 @@ import React from "react";
 
 const News = () => {
   return (
-    <Layout pageTitle="News">
-      <PageHeader title="Latest News" page="News" />
+    <Layout pageTitle="Haberler">
+      <PageHeader title="Son Haberler" page="Haberler" />
       <NewsPage />
     </Layout>
   );
