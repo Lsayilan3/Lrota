@@ -51,7 +51,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
             <i className="fa fa-star"></i> {superb} Superb
           </div>
           <h3 className="popular-tours__title">
-            <Link href="/tour-details">{title}</Link>
+            <Link href={`/tour-details/${populerId}`}>{title}</Link>
           </h3>
           <p className="popular-tours__rate">
             <span>${rate}</span> / Per Person

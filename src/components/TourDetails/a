@@ -9,8 +9,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 
-const { overview, overviewList, faq, superb, reviewScore, comments, reviews } =
-  tourDetailsLeft;
+
 
 const TourDetailsPage = () => {
   const [active, setActive] = useState(1);
@@ -34,9 +33,7 @@ const TourDetailsPage = () => {
 
     fetchData();
   }, []);
-  if (!dataa || dataa.length === 0) {
-    return <div>Loading...</div>;
-  }
+
    
   return (
     <>
@@ -269,7 +266,7 @@ const TourDetailsPage = () => {
       <div className="tour-details-two__location">
         <h3 className="tour-details-two__title">Tour Plan</h3>
         <iframe
-          src={dataa[0].map}
+          src="{dataa[0].map}"
           className="tour-details-two__location-map"
           allowFullScreen
         ></iframe>
@@ -280,7 +277,7 @@ const TourDetailsPage = () => {
       <h3 className="tour-details-two__title review-scores__title">
         Review Scores
       </h3>
-      <div className="tour-details__review-score">
+      {/* <div className="tour-details__review-score">
         <div className="tour-details__review-score-ave">
           <div className="my-auto">
             <h3>superb</h3>
@@ -295,7 +292,7 @@ const TourDetailsPage = () => {
           ))}
         </div>
       </div>
-      <ReviewForm reviews={reviews} />
+      <ReviewForm reviews={reviews} /> */}
       </Col>
           </Row>
         </Container>

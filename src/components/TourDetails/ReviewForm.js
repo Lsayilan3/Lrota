@@ -48,7 +48,7 @@ const ReviewForm = ({ reviews = [] }) => {
       <div className="tour-details__review-form-textarea">
         <form onSubmit={handleSubmit}>
           <textarea placeholder="Write Comment"></textarea>
-          <button
+          <button 
             type="submit"
             className="thm-btn tour-details__review-form-btn"
           >
