@@ -1,5 +1,6 @@
 import brandTwo from "@/data/brandTwo";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,16 +42,36 @@ const slideOptions = {
 };
 
 const BrandTwo = ({ brandThree = false }) => {
+  const apiUrl = "https://localhost:44375/WebAPI/api/brandTwoes";
+
+  const [data, setData] = useState([]);
+
+
+
+  const apiCek = async () => {
+    try {
+      const response = await axios.get(apiUrl + "/getAll");
+      setData(response.data);
+    } catch (error) {
+      console.log("API çekme hatası ne", error);
+    }
+  };
+
+  useEffect(() => {
+    apiCek();
+  }, []);
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <section className={brandThree ? "brand-two brand-three" : "brand-two"}>
       <Container>
         <Swiper className="thm-swiper__slider" {...slideOptions}>
           <div className="swiper-wrapper">
-            {brandTwo.map((brand, index) => (
+          {data.map((item, index) => (
               <SwiperSlide key={index}>
                 <Image
-                  src={require(`@/images/brand/${brand}`).default.src}
-                  alt=""
+                  src={photoUrl + item.photo} alt={item.photo || ""}
+            
                 />
               </SwiperSlide>
             ))}

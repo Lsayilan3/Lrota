@@ -1,10 +1,10 @@
 import logo from "@/images/resources/footer-logo.png";
 
 const social = [
-  { icon: "fa-twitter", link: "" },
-  { icon: "fa-facebook-square", link: "" },
-  { icon: "fa-pinterest-p", link: "" },
-  { icon: "fa-instagram", link: "" },
+  { icon: "fa-facebook-square", link: "https://www.facebook.com/limitsiz.rota/" },
+  { icon: "fa-twitter", link: "https://twitter.com/limitsizrota" },
+  { icon: "fa-instagram", link: "https://www.instagram.com/limitsiz_rota/" },
+  { icon: "fa-youtube", link: "https://www.youtube.com/@limitsizrota" },
 ];
 
 const footerData = {

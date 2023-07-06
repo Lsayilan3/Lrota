@@ -26,7 +26,9 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
     };
     fetchData();
   }, [populerId]);
+
   const photoUrl = "https://localhost:44375/WebAPI/";
+  
   return (
     <div>
       <div

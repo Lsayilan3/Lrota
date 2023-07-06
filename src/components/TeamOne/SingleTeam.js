@@ -1,24 +1,35 @@
 import React from "react";
 import { Col, Image } from "react-bootstrap";
 
-const SingleTeam = ({ team = {} }) => {
-  const { image, name, title, socials } = team;
+const SingleTeam = ({ team = {} ,data}) => {
+  const { image,  socials } = team;
 
+  const { name, title , photo, hrefBir, hrefIki, hrefUc } = data || {};
+
+
+
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <Col xl={3} lg={6} md={6} className="animated fadeInLeft">
       <div className="team-one__single">
         <div className="team-one__img">
-          <Image src={require(`@/images/team/${image}`).default.src} alt="" />
+          <Image src={photoUrl + photo} alt="" />
         </div>
         <div className="team-one__content">
           <h4 className="team-one__name">{name}</h4>
           <p className="team-one__title">{title}</p>
           <div className="team-one__social">
-            {socials.map(({ id, href, icon }) => (
-              <a href={href} key={id}>
-                <i className={icon}></i>
+          
+              <a href={hrefBir} >
+                <i className="fab fa-facebook"></i>
               </a>
-            ))}
+              <a href={hrefIki} >
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href={hrefUc} >
+                <i className="fab fa-instagram"></i>
+              </a>
+       
           </div>
         </div>
       </div>

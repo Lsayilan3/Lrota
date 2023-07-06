@@ -1,5 +1,3 @@
-import SingleTour from "@/components/PopularTours/SingleTour";
-import popularTours from "@/data/popularTours";
 import { tourDetailsOne } from "@/data/tourDetailsPage";
 import { tourDetailsLeft } from "@/data/tourDetailsPage";
 import React, { useState } from "react";
@@ -7,90 +5,122 @@ import { Col, Container, Row } from "react-bootstrap";
 import ReviewForm from "./ReviewForm";
 import ReviewScoreBar from "./ReviewScoreBar";
 import SingleComment from "./SingleComment";
+import axios from "axios";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
 
 const { overview, overviewList, faq, superb, reviewScore, comments, reviews } =
   tourDetailsLeft;
-  const { title, rate, duration, minAge, tourType, location, date } =
-  tourDetailsOne;
 
-const TourDetailsLeft = () => {
+const TourDetailsLeft = ({data}) => {
+  
+  const router = useRouter();
+  const { populerId } = router.query;
   const [active, setActive] = useState(1);
+  const { title, rate, duration, minAge, tourType, location, date, superb, overviewListOne, overviewListTwo,
+    overviewListTree, overviewListFour, overviewListFive, overviewListSix,overviewListSeven, overviewListEight, titleTwo, textTwo,
+  titleTree, textTree, titleFour, textFour, hizmetler, hizmetlerPuan, konum, konumPuan, kolayliklar, kolayliklarPuan,
+   fiyat, fiyatPuan, yiyecek, yiyecekPuan, categoryName ,map} = data || {};
+  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerListCategories";
+  const [dataa, setDataa] = useState([]);
+
+
+  useEffect(() => {
+    axios
+      .get("https://localhost:44375/WebAPI/api/haberlerCategories/getall")
+      .then((response) => {
+        setDataa(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  const selectedCategory = dataa.find(
+   (category) => category.EnPopulerListCategoryId === Number(populerId)
+ );
+
+
+  if (!dataa || dataa.length === 0) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="tour-details-two__left">
-      <section className="tour-details">
-      <div className="tour-details__top">
-        <Container>
-          <Row>
-            <Col xl={12}>
-              <div className="tour-details__top-inner">
-                <div className="tour-details__top-left">
-                  <h2 className="tour-details__top-title">{title}</h2>
-                  <p className="tour-details__top-rate">
-                    <span>${rate}</span> / Per Person
-                  </p>
-                </div>
-                <div className="tour-details__top-right">
-                  <ul className="list-unstyled tour-details__top-list">
-                    <li>
-                      <div className="icon">
-                        <span className="icon-clock"></span>
-                      </div>
-                      <div className="text">
-                        <p>Duration</p>
-                        <h6>{duration}</h6>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="icon">
-                        <span className="icon-user"></span>
-                      </div>
-                      <div className="text">
-                        <p>Min Age</p>
-                        <h6>{minAge}</h6>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="icon">
-                        <span className="icon-plane"></span>
-                      </div>
-                      <div className="text">
-                        <p>Tour Type</p>
-                        <h6>{tourType}</h6>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="icon">
-                        <span className="icon-place"></span>
-                      </div>
-                      <div className="text">
-                        <p>Location</p>
-                        <h6>{location}</h6>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <div className="tour-details__bottom">
-        <Container>
-          <Row>
-            <Col xl={12}>
-              <div className="tour-details__bottom-inner">
-                <div className="tour-details__bottom-left">
-                  <ul className="list-unstyled tour-details__bottom-list">
-                    <li>
-                      <div className="icon">
-                        <span className="icon-clock"></span>
-                      </div>
-                      <div className="text">
-                        <p>Posted {date}</p>
-                      </div>
-                    </li>
-                    <li>
+    <>
+      <div className="tour-details-two__left">
+        <section className="tour-details">
+          <div className="tour-details__top">
+            <Container>
+              <Row>
+                <Col xl={12}>
+                  <div className="tour-details__top-inner">
+                    <div className="tour-details__top-left">
+                      <h2 className="tour-details__top-title">{title}</h2>
+                      <p className="tour-details__top-rate">
+                        <span>${rate}</span> / Per Person
+                      </p>
+                    </div>
+                    <div className="tour-details__top-right">
+                      <ul className="list-unstyled tour-details__top-list">
+                        <li>
+                          <div className="icon">
+                            <span className="icon-clock"></span>
+                          </div>
+                          <div className="text">
+                            <p>Duration</p>
+                            <h6>{duration}</h6>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="icon">
+                            <span className="icon-user"></span>
+                          </div>
+                          <div className="text">
+                            <p>Min Age</p>
+                            <h6>{minAge}</h6>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="icon">
+                            <span className="icon-plane"></span>
+                          </div>
+                          <div className="text">
+                            <p>Tour Type</p>
+                            <h6>{tourType}</h6>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="icon">
+                            <span className="icon-place"></span>
+                          </div>
+                          <div className="text">
+                            <p>Location</p>
+                            <h6>{location}</h6>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          <div className="tour-details__bottom">
+            <Container>
+              <Row>
+                <Col xl={12}>
+                  <div className="tour-details__bottom-inner">
+                    <div className="tour-details__bottom-left">
+                      <ul className="list-unstyled tour-details__bottom-list">
+                        <li>
+                          <div className="icon">
+                            <span className="icon-clock"></span>
+                          </div>
+                          <div className="text">
+                            <p>Posted {date}</p>
+                          </div>
+                        </li>
+                        {/* <li>
                       <div className="icon">
                         {Array.from(Array(5)).map((_, i) => (
                           <i key={i} className="fa fa-star"></i>
@@ -99,121 +129,188 @@ const TourDetailsLeft = () => {
                       <div className="text">
                         <p>{superb} Superb</p>
                       </div>
-                    </li>
-                  </ul>
-                </div>
-                <div className="tour-details__bottom-right">
-                  <a href="#">
-                    <i className="fas fa-share"></i>share
-                  </a>
+                    </li> */}
+                      </ul>
+                    </div>
+                    <div className="tour-details__bottom-right">
+                      <a href="/contact">
+                        <i className="fas fa-share"></i>iletişim
+                      </a>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </section>
+        <Container>
+          <Row>
+            <Col xl={12}>
+              <div className="tour-details-two__overview">
+                <h3 className="tour-details-two__title">Genel Bakış</h3>
+                <p className="tour-details-two__overview-text">{categoryName}</p>
+                <div className="tour-details-two__overview-bottom">
+                  <h3 className="tour-details-two-overview__title">Included/Exclude</h3>
+                  <div className="tour-details-two__overview-bottom-inner">
+                    <div className="tour-details-two__overview-bottom-left">
+                      <ul className="list-unstyled tour-details-two__overview-bottom-list">
+
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListOne}</p>
+                          </div>
+                        </li>
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListTwo}</p>
+                          </div>
+                        </li>
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListTree}</p>
+                          </div>
+                        </li>
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListFour}</p>
+                          </div>
+                        </li>
+
+                      </ul>
+                    </div>
+                    <div className="tour-details-two__overview-bottom-right">
+                      <ul className="list-unstyled tour-details-two__overview-bottom-right-list">
+
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListFive}</p>
+                          </div>
+                        </li>
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListSix}</p>
+                          </div>
+                        </li>
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListSeven}</p>
+                          </div>
+                        </li>
+                        <li >
+                          <div className="icon">
+                            <i className="fa fa-check"></i>
+                          </div>
+                          <div className="text">
+                            <p>{overviewListEight}</p>
+                          </div>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div style={{ marginBottom: 100 }} className="tour-details-two__tour-plan">
+                <h3 className="tour-details-two__title">Tur Planı</h3>
+                <div class="destinations-details__faq" id="accordionPanelsStayOpenExample">
+                  <div class="accrodion-grp faq-one-accrodion">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        {titleTwo}
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                      <div class="accordion-body">
+                        {textTwo}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accrodion-grp faq-one-accrodion">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                        {titleTree}
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                      <div class="accordion-body">
+                        {textTree}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accrodion-grp faq-one-accrodion">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                        {titleFour}
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                      <div class="accordion-body">
+                        {textFour}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div style={{ marginBottom: 140 }} className="tour-details-two__location">
+                <h3 className="tour-details-two__title">Tur Planı</h3>
+                <iframe
+                  src={map}
+                  className="tour-details-two__location-map"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="tour-details-two__related-tours">
+
+              </div>
+              <h3 className="tour-details-two__title review-scores__title">
+                İnceleme Puanları
+              </h3>
+              <div style={{ marginBottom: 100 }} className="tour-details__review-score">
+                <div className="tour-details__review-score-ave">
+                  <div className="my-auto">
+                    <h3></h3>
+                    <p>
+                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
+                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
+                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
+                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
+                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>                 
+                    </p>
+                  </div>
+                </div>
+                <div className="tour-details__review-score__content">
+                  <ReviewScoreBar />
+                </div>
+              </div>
+              <ReviewForm reviews={reviews} />
             </Col>
           </Row>
         </Container>
       </div>
-    </section>
-      <div className="tour-details-two__overview">
-        <h3 className="tour-details-two__title">Overview</h3>
-        <p className="tour-details-two__overview-text">{overview}</p>
-        <div className="tour-details-two__overview-bottom">
-          <h3 className="tour-details-two-overview__title">Included/Exclude</h3>
-          <div className="tour-details-two__overview-bottom-inner">
-            <div className="tour-details-two__overview-bottom-left">
-              <ul className="list-unstyled tour-details-two__overview-bottom-list">
-                {overviewList.slice(0, 4).map((over, index) => (
-                  <li key={index}>
-                    <div className="icon">
-                      <i className="fa fa-check"></i>
-                    </div>
-                    <div className="text">
-                      <p>{over}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="tour-details-two__overview-bottom-right">
-              <ul className="list-unstyled tour-details-two__overview-bottom-right-list">
-                {overviewList.slice(4).map((over, index) => (
-                  <li key={index}>
-                    <div className="icon">
-                      <i className="fa fa-check"></i>
-                    </div>
-                    <div className="text">
-                      <p>{over}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="tour-details-two__tour-plan">
-        <h3 className="tour-details-two__title">Tour Plan</h3>
-        <div className="accrodion-grp faq-one-accrodion">
-          {faq.map(({ id, title, text, lists }) => (
-            <div
-              className={`accrodion overflow-hidden${
-                active === id ? " active" : ""
-              }`}
-              key={id}
-            >
-              <div onClick={() => setActive(id)} className="accrodion-title">
-                <h4>
-                  <span>Day {id}</span> {title}
-                </h4>
-              </div>
-              <div
-                className={`accrodion-content animated ${
-                  active === id ? "slideInUp d-block" : "slideInDown d-none"
-                }`}
-              >
-                <div className="inner">
-                  <p>{text}</p>
-                  <ul className="list-unstyled">
-                    {lists.map((list, index) => (
-                      <li key={index}>{list}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="tour-details-two__location">
-        <h3 className="tour-details-two__title">Tour Plan</h3>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
-          className="tour-details-two__location-map"
-          allowFullScreen
-        ></iframe>
-      </div>
-      <div className="tour-details-two__related-tours">
-   
-      </div>
-      <h3 className="tour-details-two__title review-scores__title">
-        Review Scores
-      </h3>
-      <div className="tour-details__review-score">
-        <div className="tour-details__review-score-ave">
-          <div className="my-auto">
-            <h3>{superb}</h3>
-            <p>
-              <i className="fa fa-star"></i> Super
-            </p>
-          </div>
-        </div>
-        <div className="tour-details__review-score__content">
-          {reviewScore.map((review) => (
-            <ReviewScoreBar review={review} key={review.id} />
-          ))}
-        </div>
-      </div>
-      <ReviewForm reviews={reviews} />
-    </div>
+
+    </>
   );
 };
 

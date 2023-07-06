@@ -37,7 +37,7 @@ const SiteFooter = () => {
                         </div>
                         <div className="text">
                           {subHref ? (
-                            <a href={`${subHref}:${content}`}>{content}</a>
+                            <a  href={`${subHref}:${content}`}>{content}</a>
                           ) : (
                             <p>{content}</p>
                           )}
@@ -113,7 +113,7 @@ const SiteFooter = () => {
                 <div className="site-footer__bottom-left">
                   <div className="footer-widget__social">
                     {social.map(({ icon, link }, index) => (
-                      <a href={link} key={index}>
+                      <a target="_blank" href={link} key={index}>
                         <i className={`fab ${icon}`}></i>
                       </a>
                     ))}
