@@ -23,7 +23,7 @@ const {
   comments,
 } = newsDetailsPage;
 
-const NewsDetailsLeft = ({categories}) => {
+const NewsDetailsLeft = ({ categories }) => {
 
 
   const handleSubmit = (e) => {
@@ -37,9 +37,9 @@ const NewsDetailsLeft = ({categories}) => {
   const router = useRouter();
   const { haberId } = router.query;
 
-  
-  const {  textOne, textTwo, textTree,textFour,totalComments,title, userPhoto, name, description , userTwoPhoto, nameTwo,
-    message , userTreePhoto,  nameTree, messageTwo,photo
+
+  const { textOne, textTwo, textTree, textFour, totalComments, title, userPhoto, name, description, userTwoPhoto, nameTwo,
+    message, userTreePhoto, nameTree, messageTwo, photo
   } = categories || {};
   const [categoriesData, setCategoriesData] = useState([]);
 
@@ -54,14 +54,14 @@ const NewsDetailsLeft = ({categories}) => {
       });
   }, []);
   const selectedCategory = categoriesData.find(
-   (category) => category.haberlerCategoryId === Number(haberId)
- );
+    (category) => category.haberlerCategoryId === Number(haberId)
+  );
 
- const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <div className="news-details__left">
       <div className="news-details__img">
-        <Image src={photoUrl + photo} alt={photo || ""}  />
+        <Image src={photoUrl + photo} alt={photo || ""} />
         <div className="news-one__date">
           <p>
             {date.split(" ").map((t, i) => (
@@ -93,26 +93,26 @@ const NewsDetailsLeft = ({categories}) => {
           </li>
         </ul>
         <h3 className="news-details__title">{title}</h3>
-     
-          <p  className="news-details__text">
-            {textOne}
-          </p>
-          <p  className="news-details__text">
-            {textTwo}
-          </p>
-          <p  className="news-details__text">
-            {textTree}
-          </p>
-          <p  className="news-details__text">
-            {textFour}
-          </p>
-     
+
+        <p className="news-details__text">
+          {textOne}
+        </p>
+        <p className="news-details__text">
+          {textTwo}
+        </p>
+        <p className="news-details__text">
+          {textTree}
+        </p>
+        <p className="news-details__text">
+          {textFour}
+        </p>
+
       </div>
       <div className="news-details__bottom">
         <p className="news-details__tags">
           <span></span>
-        
-          
+
+
         </p>
         <div className="news-details__social-list">
           {socials.map(({ id, icon, href }) => (
@@ -124,18 +124,18 @@ const NewsDetailsLeft = ({categories}) => {
 
 
       </div>   <div className="author-one">
-      <div className="author-one__image">
-        <Image src={photoUrl + userPhoto} alt={userPhoto || ""} />
+        <div className="author-one__image">
+          <Image src={photoUrl + userPhoto} alt={userPhoto || ""} />
+        </div>
+        <div className="author-one__content">
+          <h3>{name}</h3>
+          <p>{description}</p>
+        </div>
       </div>
-      <div className="author-one__content">
-        <h3>{name}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
 
-    <div className="comment-one">
-      <h3 className="comment-one__title">{comments.length} Comments</h3>
-     
+      <div className="comment-one">
+        <h3 className="comment-one__title">{comments.length} Comments</h3>
+
         <div className="comment-one__single" >
           <div className="comment-one__image">
             <Image src={photoUrl + userTwoPhoto} alt={userTwoPhoto || ""} />
@@ -151,7 +151,7 @@ const NewsDetailsLeft = ({categories}) => {
 
         <div className="comment-one__single" >
           <div className="comment-one__image">
-            <Image src={photoUrl + userTreePhoto} alt={userTreePhoto || ""}  />
+            <Image src={photoUrl + userTreePhoto} alt={userTreePhoto || ""} />
           </div>
           <div className="comment-one__content">
             <h3>{nameTree}</h3>
@@ -162,34 +162,34 @@ const NewsDetailsLeft = ({categories}) => {
           </div>
         </div>
 
-    </div>
-    <div className="comment-form">
-      <h3 className="comment-form__title">Leave a Comment</h3>
-      <form onSubmit={handleSubmit} className="comment-one__form">
-        <Row>
-          <Col xl={6}>
-            <div className="comment-form__input-box">
-              <input type="text" placeholder="Your name" name="name" />
-            </div>
-          </Col>
-          <Col xl={6}>
-            <div className="comment-form__input-box">
-              <input type="email" placeholder="Email address" name="email" />
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col xl={12}>
-            <div className="comment-form__input-box">
-              <textarea name="message" placeholder="Write Comment"></textarea>
-            </div>
-            <button type="submit" className="thm-btn comment-form__btn">
-              Submit Comment
-            </button>
-          </Col>
-        </Row>
-      </form>
-    </div>
+      </div>
+      <div className="comment-form">
+        <h3 className="comment-form__title">Yorum Yap</h3>
+        <form onSubmit={handleSubmit} className="comment-one__form">
+          <Row>
+            <Col xl={6}>
+              <div className="comment-form__input-box">
+                <input style={{ border: "solid 1px #e8604c", opacity: 0.8 }} type="text" placeholder="Adınız" name="name" />
+              </div>
+            </Col>
+            <Col xl={6}>
+              <div className="comment-form__input-box">
+                <input style={{ border: "solid 1px #e8604c", opacity: 0.8 }} type="email" placeholder="E-posta adresi" name="email" />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col xl={12}>
+              <div className="comment-form__input-box">
+                <textarea style={{ border: "solid 1px #e8604c", opacity: 0.8 }} name="message" placeholder="Yorum Yaz"></textarea>
+              </div>
+              <button type="submit" className="thm-btn comment-form__btn">
+                Yorum Gönder
+              </button>
+            </Col>
+          </Row>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { Container } from "react-bootstrap";
 import { SwiperSlide } from "swiper/react";

@@ -63,6 +63,8 @@ const DestinationsDetailsLeft = ({ categories, detayy }) => {
   </Col>
 </Row>
 
+
+
       </div>
       <div className="destinations-details__discover">
         <h3 className="destinations-details__title">Discover Spain</h3>

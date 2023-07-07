@@ -14,7 +14,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
     const fetchData = async () => {
       try {
         if (populerId) {
-          const response = await axios.get(`https://localhost:44375/WebAPI/api/enPopulerLists/getlist?populerId=${populerId}`);
+          const response = await axios.get(`https://localhost:44375/WebAPI/api/enPopulerListts/getlist?populerId=${populerId}`);
           setSpots(response.data.data);
         } else {
           const response = await axios.get("https://localhost:44375/WebAPI/api/enPopulerLists/getall");

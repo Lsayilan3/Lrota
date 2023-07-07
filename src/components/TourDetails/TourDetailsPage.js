@@ -13,7 +13,7 @@ const DestinationsDetailsPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:44375/WebAPI/api/enPopulerListCategories/getall")
+      .get("https://localhost:44375/WebAPI/api/enPopulerListtCategories/getall")
       .then((response) => {
         setCategoriesData(response.data);
         console.log(response.data);
@@ -23,13 +23,14 @@ const DestinationsDetailsPage = () => {
       });
   }, []);
   const selectedCategory = categoriesData.find(
-    (category) => category.enPopulerListCategoryId === Number(populerId)
+    (category) => category.enPopulerListtCategoryId === Number(populerId)
   );
+  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <section className="destinations-details">
       <Container>
       {selectedCategory && (
-              <TourDetailsLeft data={selectedCategory} />
+              <TourDetailsLeft photoUrl={photoUrl} data={selectedCategory} />
             )}
       </Container>
     </section>

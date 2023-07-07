@@ -45,6 +45,7 @@ const ContactPage = () => {
                     <Col xl={6}>
                       <div className="comment-form__input-box">
                         <input
+                       style={{ border: "solid 1px #e8604c", opacity: 0.5 }}
                           type="text"
                           placeholder="Adınız"
                           name="name"
@@ -55,6 +56,7 @@ const ContactPage = () => {
                     <Col xl={6}>
                       <div className="comment-form__input-box">
                         <input
+                        style={{ border: "solid 1px #e8604c", opacity: 0.5 }}
                           type="email"
                           placeholder="E-posta adresi"
                           name="email"
@@ -67,6 +69,7 @@ const ContactPage = () => {
                     <Col xl={12}>
                       <div className="comment-form__input-box">
                         <textarea
+                        style={{ border: "solid 1px #e8604c", opacity: 0.5 }}
                           name="message"
                           placeholder="Yorum Yaz"
                           required

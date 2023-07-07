@@ -13,7 +13,7 @@ const TourDetails = () => {
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainSliderTwo />
+      <MainSliderTwo  populerId={populerId}/>
       <TourDetailsPage populerId={populerId} />
     </Layout>
   );
