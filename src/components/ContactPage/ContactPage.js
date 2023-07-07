@@ -27,7 +27,7 @@ const ContactPage = () => {
               </div>
               <div className="contact-page__social">
                 {socials.map(({ id, icon, href }) => (
-                  <a href={href} key={id}>
+                  <a href={href} target="_blank" key={id}>
                     <i className={icon}></i>
                   </a>
                 ))}
