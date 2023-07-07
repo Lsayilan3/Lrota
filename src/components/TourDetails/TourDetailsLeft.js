@@ -60,7 +60,7 @@ const TourDetailsLeft = ({ data }) => {
                         <div className="tour-details__top-left">
                           <h2 className="tour-details__top-title">{title}</h2>
                           <p className="tour-details__top-rate">
-                            <span>${rate}</span> / Per Person
+                            <span>₺{rate}</span> / Kişi Başına
                           </p>
                         </div>
                         <div className="tour-details__top-right">
@@ -70,7 +70,7 @@ const TourDetailsLeft = ({ data }) => {
                                 <span className="icon-clock"></span>
                               </div>
                               <div className="text">
-                                <p>Duration</p>
+                                <p>Süre</p>
                                 <h6>{duration}</h6>
                               </div>
                             </li>
@@ -79,7 +79,7 @@ const TourDetailsLeft = ({ data }) => {
                                 <span className="icon-user"></span>
                               </div>
                               <div className="text">
-                                <p>Min Age</p>
+                                <p>Asgari Yaş</p>
                                 <h6>{minAge}</h6>
                               </div>
                             </li>
@@ -88,7 +88,7 @@ const TourDetailsLeft = ({ data }) => {
                                 <span className="icon-plane"></span>
                               </div>
                               <div className="text">
-                                <p>Tour Type</p>
+                                <p>Tur Türü</p>
                                 <h6>{tourType}</h6>
                               </div>
                             </li>
@@ -97,7 +97,7 @@ const TourDetailsLeft = ({ data }) => {
                                 <span className="icon-place"></span>
                               </div>
                               <div className="text">
-                                <p>Location</p>
+                                <p>Konum</p>
                                 <h6>{location}</h6>
                               </div>
                             </li>
@@ -132,7 +132,7 @@ const TourDetailsLeft = ({ data }) => {
                                 <span className="icon-clock"></span>
                               </div>
                               <div className="text">
-                                <p>Posted {date}</p>
+                                <p>Gönderildi {date}</p>
                               </div>
                             </li>
                             {/* <li>
@@ -158,11 +158,7 @@ const TourDetailsLeft = ({ data }) => {
                 </Container>
               </div>
             </section>
-
-
-
             <Container>
-
               <Row>
                 <Col xl={12}>
                   <div style={{ paddingTop: 30 }} className="tour-details-two__overview">

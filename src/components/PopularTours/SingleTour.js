@@ -56,7 +56,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
             <Link href={`/tour-details/${populerId}`}>{title}</Link>
           </h3>
           <p className="popular-tours__rate">
-            <span>${rate}</span> / Per Person
+            <span>₺{rate}</span> / Kişi Başına
           </p>
           <ul className="popular-tours__meta list-unstyled">
 

@@ -67,7 +67,7 @@ const DestinationsDetailsLeft = ({ categories, detayy }) => {
 
       </div>
       <div className="destinations-details__discover">
-        <h3 className="destinations-details__title">Discover Spain</h3>
+        <h3 className="destinations-details__title">Keşfedin</h3>
 
         <p
 
@@ -83,8 +83,8 @@ const DestinationsDetailsLeft = ({ categories, detayy }) => {
         </p>
 
       </div>
-      <div className="destinations-details__overview">
-        <h3 className="destinations-details__title">Genel Bakış</h3>
+      <div style={{paddingBottom:22}}  className="destinations-details__overview">
+        <h3 style={{paddingBottom:40}} className="destinations-details__title">Genel Bakış</h3>
         <ul className="list-unstyled destinations-details__overview-list">
 
           <li>

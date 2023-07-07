@@ -1,4 +1,4 @@
-import logo from "@/images/resources/footer-logo.png";
+import logo from "@/images/resources/logo-1.png";
 
 const social = [
   { icon: "fa-facebook-square", link: "https://www.facebook.com/limitsiz.rota/" },

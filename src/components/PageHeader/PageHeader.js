@@ -1,4 +1,4 @@
-import bg from "@/images/backgrounds/page-header-bg.jpg";
+import bg from "@/images/backgrounds/background.jpg";
 import Link from "next/link";
 import React from "react";
 import { Container } from "react-bootstrap";

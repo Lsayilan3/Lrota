@@ -14,9 +14,8 @@ const Header = ({ pageTitle }) => {
 
   return (
     <header
-      className={`main-header${
-        pageTitle === "Home Two" ? " main-header-two" : ""
-      } clearfix`}
+      className={`main-header${pageTitle === "Home Two" ? " main-header-two" : ""
+        } clearfix`}
     >
       <div className="main-header__top">
         <Container>
@@ -46,7 +45,7 @@ const Header = ({ pageTitle }) => {
                 </div>
                 <div className="main-header__top-right-btn-box">
                   <a href="contact" className="thm-btn main-header__top-right-btn">
-                  Yerel rehber olun
+                    Yerel rehber olun
                   </a>
                 </div>
               </div>
@@ -57,12 +56,10 @@ const Header = ({ pageTitle }) => {
       <nav
         className={
           scrollTop
-            ? `stricky-header stricked-menu main-menu${
-                pageTitle === "Home Two" ? " main-menu-two" : ""
-              } stricky-fixed slideInDown animated clearfix`
-            : `main-menu${
-                pageTitle === "Home Two" ? " main-menu-two" : ""
-              } slideIn animated clearfix`
+            ? `stricky-header stricked-menu main-menu${pageTitle === "Home Two" ? " main-menu-two" : ""
+            } stricky-fixed slideInDown animated clearfix`
+            : `main-menu${pageTitle === "Home Two" ? " main-menu-two" : ""
+            } slideIn animated clearfix`
         }
       >
         <div
@@ -78,15 +75,17 @@ const Header = ({ pageTitle }) => {
                 <div className="main-menu-wrapper__logo">
                   <Link href="/">
                     <a>
-                      <Image
-                        src={pageTitle === "Home Two" ? logo2.src : logo.src}
-                        alt=""
-                      />
-                      
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <Image
+                          src={pageTitle === 'Home Two' ? logo2.src : logo.src}
+                          alt=""
+                        />
+                        <h3 style={{ marginLeft: -93 , marginBottom: 2, color:"#313041"}}>Limitsiz Rota</h3>
+                      </div>
                     </a>
-                    
                   </Link>
                 </div>
+
                 <div className="main-menu-wrapper__main-menu">
                   <span
                     onClick={() => toggleMenu()}

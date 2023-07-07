@@ -5,7 +5,7 @@ const whyChoose = {
   bg,
   bg2,
   toggleText: " Trips \n & tours",
-  title: "Neden Limitsiz Rota'yı ",
+  title: "Neden Limitsiz Rota ",
   tagline: "Avantaj listelerimiz",
   description:
     "Limitsiz Rota, geniş tur seçenekleri ve memnuniyet garantisiyle seyahatlerinizi unutulmaz kılıyor. Uygun fiyatlar, eşsiz deneyimler ile unutulmaz seyahatler sunuyoruz",

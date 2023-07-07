@@ -5,16 +5,15 @@ import React from "react";
 import { Image } from "react-bootstrap";
 import NavItem from "./NavItem";
 
-const { social, logo, navItems } = headerData;
+const { social, logo2, navItems } = headerData;
 
 const MobileMenu = () => {
   const { toggleMenu, menuStatus } = useRootContext();
 
   return (
     <div
-      className={`mobile-nav__wrapper  animated fadeInLeft${
-        menuStatus ? " expanded" : ""
-      }`}
+      className={`mobile-nav__wrapper  animated fadeInLeft${menuStatus ? " expanded" : ""
+        }`}
     >
       <div
         onClick={() => toggleMenu()}
@@ -27,14 +26,15 @@ const MobileMenu = () => {
         >
           <i className="fa fa-times"></i>
         </span>
-
-        <div className="logo-box">
+        <div className="logo-box" style={{ display: 'flex', alignItems: 'center' ,marginBottom: 16  }}>
           <Link href="/">
-            <a aria-label="logo image">
-              <Image src={logo.src} width={155} alt="" />
+            <a  aria-label="logo image" style={{ display: 'flex', alignItems: 'center' ,marginBottom: 0 }}>
+              <Image src={logo2.src} width={155} alt="" />
+              <h3 style={{ marginLeft: '-105px', color:"white", marginBottom: 0 }}>Limitsiz Rota</h3>
             </a>
           </Link>
         </div>
+
         <div className="mobile-nav__container">
           <ul className="main-menu__list">
             {navItems.map(({ id, ...item }) => (
@@ -46,11 +46,11 @@ const MobileMenu = () => {
         <ul className="mobile-nav__contact list-unstyled">
           <li>
             <i className="fa fa-envelope"></i>
-            <a href="mailto:needhelp@packageName__.com">needhelp@tevily.com</a>
+            <a href="mailto:kadirvarol_@hotmail.co">kadirvarol_@hotmail.com</a>
           </li>
           <li>
             <i className="fa fa-phone-alt"></i>
-            <a href="tel:666-888-0000">666 888 0000</a>
+            <a href="tel:+09 532 604 37 30">+09 532 604 37 30</a>
           </li>
         </ul>
         <div className="mobile-nav__top">

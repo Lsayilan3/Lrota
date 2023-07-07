@@ -21,13 +21,7 @@ const NavItem = ({ item = {} }) => {
       <Link href={href}>
         <a className={expand ? " expanded" : ""}>
           {name}
-          <button
-            onClick={handleExpand}
-            aria-label="dropdown toggler"
-            className={expand ? "expanded" : ""}
-          >
-            <i className="fa fa-angle-down"></i>
-          </button>
+       
         </a>
       </Link>
       <ul

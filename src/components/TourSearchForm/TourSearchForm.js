@@ -119,9 +119,9 @@ const TourSearchForm = () => {
           </div>
         </div>
         <div className="tour-search-one__btn-wrap">
-          <button type="submit" className="thm-btn tour-search-one__btn">
-            Find now
-          </button>
+          <a href="/tours">
+            <button  className="thm-btn tour-search-one__btn" type="button">Find now</button>
+          </a>
         </div>
       </div>
     </form>

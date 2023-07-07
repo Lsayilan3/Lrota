@@ -21,10 +21,11 @@ const SiteFooter = () => {
             <Row>
               <Col xl={5} lg={6} md={6} className="animated fadeInUp">
                 <div className="footer-widget__column footer-widget__about">
-                  <div className="footer-widget__about-logo">
+                  <div className="logo-box" style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
                     <Link href="/">
-                      <a>
-                        <Image src={logo.src} alt="" />
+                      <a aria-label="logo image" style={{ display: 'flex', alignItems: 'center', marginBottom: 0 }}>
+                        <Image src={logo.src} width={155} alt="" />
+                        <h3 style={{ marginLeft: '-105px', color: "white", marginBottom: 3 }}>Limitsiz Rota</h3>
                       </a>
                     </Link>
                   </div>
@@ -37,7 +38,7 @@ const SiteFooter = () => {
                         </div>
                         <div className="text">
                           {subHref ? (
-                            <a  href={`${subHref}:${content}`}>{content}</a>
+                            <a href={`${subHref}:${content}`}>{content}</a>
                           ) : (
                             <p>{content}</p>
                           )}
@@ -64,7 +65,7 @@ const SiteFooter = () => {
                     ))}
                   </ul>
                 </div>
-              </Col>       
+              </Col>
               <Col xl={4} lg={6} md={6} className="animated fadeInUp">
                 <div className="footer-widget__column footer-widget__newsletter">
                   <h3 className="footer-widget__title">Güncellemeleri Al</h3>
@@ -80,13 +81,13 @@ const SiteFooter = () => {
                         required
                       />
                       <a href="mailto:ajanssahin@hotmail.com">
-                      <button
-                        type="button"
-                        className="footer-widget__newsletter-btn"
-                    
-                      >
-                        Bize katıl
-                      </button>
+                        <button
+                          type="button"
+                          className="footer-widget__newsletter-btn"
+
+                        >
+                          Bize katıl
+                        </button>
                       </a>
                     </div>
                   </form>
@@ -113,7 +114,7 @@ const SiteFooter = () => {
                 <div className="site-footer__bottom-left">
                   <div className="footer-widget__social">
                     {social.map(({ icon, link }, index) => (
-                      <a target="_blank" href={link} key={index}>
+                      <a href={link} target="_blank" key={index}>
                         <i className={`fab ${icon}`}></i>
                       </a>
                     ))}

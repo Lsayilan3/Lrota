@@ -33,7 +33,7 @@ const ToursListRight = () => {
                   <Link href="/tour-details">{title}</Link>
                 </h3>
                 <p className="tours-list__rate">
-                  <span>${rate}</span> / Per Person
+                  <span>{rate}</span> / Per Person
                 </p>
                 <p className="tours-list__text">{text}</p>
                 <ul className="tours-list__meta list-unstyled">

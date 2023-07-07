@@ -27,7 +27,7 @@ const ContactPage = () => {
               </div>
               <div className="contact-page__social">
                 {socials.map(({ id, icon, href }) => (
-                  <a href={href} target="_blank" key={id}>
+                  <a href={href} key={id}>
                     <i className={icon}></i>
                   </a>
                 ))}
@@ -45,7 +45,6 @@ const ContactPage = () => {
                     <Col xl={6}>
                       <div className="comment-form__input-box">
                         <input
-                       style={{ border: "solid 1px #e8604c", opacity: 0.5 }}
                           type="text"
                           placeholder="Adınız"
                           name="name"
@@ -56,7 +55,6 @@ const ContactPage = () => {
                     <Col xl={6}>
                       <div className="comment-form__input-box">
                         <input
-                        style={{ border: "solid 1px #e8604c", opacity: 0.5 }}
                           type="email"
                           placeholder="E-posta adresi"
                           name="email"
@@ -69,13 +67,12 @@ const ContactPage = () => {
                     <Col xl={12}>
                       <div className="comment-form__input-box">
                         <textarea
-                        style={{ border: "solid 1px #e8604c", opacity: 0.5 }}
                           name="message"
                           placeholder="Yorum Yaz"
                           required
                         ></textarea>
                       </div>
-                      <a href="mailto:ajanssahin@hotmail.com">
+                      <a href="mailto:kadirvarol_@hotmail.com">
                             <button
                         type="button"
                         className="thm-btn comment-form__btn"

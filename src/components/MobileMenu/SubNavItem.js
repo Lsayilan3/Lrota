@@ -17,15 +17,7 @@ const SubNavItem = ({ subItem = {} }) => {
       <Link href={href}>
         <a className={expand && subItems?.length ? " expanded" : ""}>
           {name}
-          {subItems?.length && (
-            <button
-              onClick={handleExpand}
-              aria-label="dropdown toggler"
-              className={expand ? "expanded" : ""}
-            >
-              <i className="fa fa-angle-down"></i>
-            </button>
-          )}
+         
         </a>
       </Link>
       <ul
