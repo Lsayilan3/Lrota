@@ -18,9 +18,14 @@ const SingleTestimonial = ({ data }) => {
         </div>
         <div className="testimonail-one__content">
           <div className="testimonial-one__top-revivew-box">
-            {Array.from(Array(review)).map((_, i) => (
-              <i key={i} className="fa fa-star"></i>
-            ))}
+            
+              <i style={{cursor:"pointer"}} className="fa fa-star"></i>
+              <i style={{cursor:"pointer"}} className="fa fa-star"></i>
+              <i style={{cursor:"pointer"}} className="fa fa-star"></i>
+              <i style={{cursor:"pointer"}} className="fa fa-star"></i>
+              <i style={{cursor:"pointer"}} className="fa fa-star"></i>
+           
+         
           </div>
           <p className="testimonial-one__text">{description}</p>
           <div className="testimonial-one__client-info">

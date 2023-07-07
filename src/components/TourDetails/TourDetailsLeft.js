@@ -146,7 +146,7 @@ const TourDetailsLeft = ({data}) => {
         <Container>
           <Row>
             <Col xl={12}>
-              <div className="tour-details-two__overview">
+              <div style={{paddingTop:30}} className="tour-details-two__overview">
                 <h3 className="tour-details-two__title">Genel Bakış</h3>
                 <p className="tour-details-two__overview-text">{categoryName}</p>
                 <div className="tour-details-two__overview-bottom">
@@ -231,7 +231,7 @@ const TourDetailsLeft = ({data}) => {
                   </div>
                 </div>
               </div>
-              <div style={{ marginBottom: 100 }} className="tour-details-two__tour-plan">
+              <div style={{ paddingBottom: 50 }} className="tour-details-two__tour-plan">
                 <h3 className="tour-details-two__title">Tur Planı</h3>
                 <div class="destinations-details__faq" id="accordionPanelsStayOpenExample">
                   <div class="accrodion-grp faq-one-accrodion">
@@ -273,7 +273,7 @@ const TourDetailsLeft = ({data}) => {
                 </div>
 
               </div>
-              <div style={{ marginBottom: 140 }} className="tour-details-two__location">
+              <div style={{ paddingBottom: 50 }} className="tour-details-two__location">
                 <h3 className="tour-details-two__title">Tur Planı</h3>
                 <iframe
                   src={map}
@@ -287,20 +287,17 @@ const TourDetailsLeft = ({data}) => {
               <h3 className="tour-details-two__title review-scores__title">
                 İnceleme Puanları
               </h3>
-              <div style={{ marginBottom: 100 }} className="tour-details__review-score">
+              <div style={{ marginBottom: 100 , }} className="tour-details__review-score">
                 <div className="tour-details__review-score-ave">
                   <div className="my-auto">
-                    <h3></h3>
+                    <h3>8.0</h3>
                     <p>
-                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
-                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
-                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
-                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>
-                      <i style={{fontSize:32, cursor:"pointer"}} className="fa fa-star"></i>                 
+                      <i className="fa fa-star"></i> Mükemmel
+                         
                     </p>
                   </div>
                 </div>
-                <div className="tour-details__review-score__content">
+                <div  className="tour-details__review-score__content">
                   <ReviewScoreBar />
                 </div>
               </div>

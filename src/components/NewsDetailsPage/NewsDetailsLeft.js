@@ -116,7 +116,7 @@ const NewsDetailsLeft = ({categories}) => {
         </p>
         <div className="news-details__social-list">
           {socials.map(({ id, icon, href }) => (
-            <a href={href} key={id}>
+            <a href={href} target="_blank" key={id}>
               <i className={icon}></i>
             </a>
           ))}

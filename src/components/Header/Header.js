@@ -101,14 +101,14 @@ const Header = ({ pageTitle }) => {
                   </ul>
                 </div>
               </div>
-              <div className="main-menu-wrapper__right">
+              {/* <div className="main-menu-wrapper__right">
                 <span
                   onClick={toggleSearch}
                   style={{ cursor: "pointer" }}
                   className="main-menu__search search-toggler icon-magnifying-glass"
                 ></span>
                 <a href="#" className="main-menu__user icon-avatar"></a>
-              </div>
+              </div> */}
             </div>
           </Container>
         </div>

@@ -12,7 +12,7 @@ const DestinationsDetailsPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:44375/WebAPI/api/hedefListCategories/getall")
+      .get("https://localhost:44375/WebAPI/api/hedefListtCategories/getall")
       .then((response) => {
         setCategoriesData(response.data);
         console.log(response.data);
@@ -22,7 +22,7 @@ const DestinationsDetailsPage = () => {
       });
   }, []);
   const selectedCategory = categoriesData.find(
-    (category) => category.hedefListCategoryId === Number(categoryId)
+    (category) => category.hedefListtCategoryId === Number(categoryId)
   );
   return (
     <section className="destinations-details">

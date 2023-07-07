@@ -8,19 +8,19 @@ const ReviewForm = ({ reviews = [] }) => {
 
   return (
     <div style={{marginBottom: 140}} className="tour-details__review-form">
-      <h3 className="tour-details-two__title">Bir değerlendirme yazın</h3>
+      <h3 style={{paddingBottom:5}} className="tour-details-two__title">Bir değerlendirme yazın</h3>
       <Row>
         <Col xl={6}>
           <div className="tour-details__review-form-left">
             <form onSubmit={handleSubmit} className="tour-details__review-form">
               <div className="tour-details__review-form-input">
-                <input type="text" placeholder="Adınız" name="name" />
+                <input style={{border:"solid 1px #e8604c"}} type="text" placeholder="Adınız" name="name" />
               </div>
               <div className="tour-details__review-form-input">
-                <input type="email" placeholder="E-posta Adresi" name="email" />
+                <input style={{border:"solid 1px #e8604c"}} type="email" placeholder="E-posta Adresi" name="email" />
               </div>
               <div className="tour-details__review-form-input">
-                <input type="text" placeholder="İnceleme Başlığı" name="review" />
+                <input style={{border:"solid 1px #e8604c"}} type="text" placeholder="İnceleme Başlığı" name="review" />
               </div>
             </form>
           </div>
@@ -47,10 +47,10 @@ const ReviewForm = ({ reviews = [] }) => {
       </Row>
       <div className="tour-details__review-form-textarea">
         <form onSubmit={handleSubmit}>
-          <textarea placeholder="Yorum Yaz"></textarea>
-          <button 
+          <textarea style={{border:"solid 1px #e8604c"}} placeholder="Yorum Yaz"></textarea>
+          <button  
             type="submit"
-            className="thm-btn tour-details__review-form-btn"
+            className="thm-btn tour-details__review-form-btn "
           >
             Bir Mesaj Gönderin
           </button>
