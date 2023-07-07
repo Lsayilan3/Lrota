@@ -7,7 +7,7 @@ const ReviewForm = ({ reviews = [] }) => {
   };
 
   return (
-    <div style={{marginBottom: 140}} className="tour-details__review-form">
+    <div style={{marginBottom: 0}} className="tour-details__review-form">
       <h3 style={{paddingBottom:5}} className="tour-details-two__title">Bir değerlendirme yazın</h3>
       <Row>
         <Col xl={6}>
