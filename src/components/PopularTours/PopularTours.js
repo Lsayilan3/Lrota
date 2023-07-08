@@ -40,7 +40,6 @@ const PopularTours = () => {
   const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerLists";
 
   const [popularTours, setPopularTours] = useState([]);
-  const [colValues, setColValues] = useState([]);
 
   const apiCek = async () => {
     try {

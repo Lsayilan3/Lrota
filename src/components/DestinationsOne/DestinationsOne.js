@@ -29,9 +29,6 @@ const DestinationsOne = () => {
 
   const photoUrl = "https://localhost:44375/WebAPI/";
 
-
-
-
   return (
     <section className="destinations-one">
       <Container>

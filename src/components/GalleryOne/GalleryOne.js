@@ -12,7 +12,6 @@ const GalleryOne = () => {
 
   const [data, setData] = useState([]);;
 
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
@@ -27,7 +26,7 @@ const GalleryOne = () => {
   }, []);
 
   return (
-   <section className="gallery-one">
+    <section className="gallery-one">
       <div
         className="gallery-one-bg"
         style={{ backgroundImage: `url(${bg.src})` }}
@@ -35,7 +34,7 @@ const GalleryOne = () => {
       <div className="gallery-one__container-box clearfix">
         <ul className="list-unstyled gallery-one__content clearfix">
           {data.map((data) => (
-            <SingleGallery   key={data.mediaPhotoId} data={data} />
+            <SingleGallery key={data.mediaPhotoId} data={data} />
           ))}
         </ul>
       </div>

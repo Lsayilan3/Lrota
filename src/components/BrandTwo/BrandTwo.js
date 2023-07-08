@@ -1,4 +1,3 @@
-import brandTwo from "@/data/brandTwo";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
@@ -46,8 +45,6 @@ const BrandTwo = ({ brandThree = false }) => {
 
   const [data, setData] = useState([]);
 
-
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
@@ -71,7 +68,6 @@ const BrandTwo = ({ brandThree = false }) => {
               <SwiperSlide key={index}>
                 <Image
                   src={photoUrl + item.photo} alt={item.photo || ""}
-            
                 />
               </SwiperSlide>
             ))}

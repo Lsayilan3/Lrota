@@ -27,8 +27,6 @@ const DestinationsPage = () => {
     apiCek();
   }, []);
 
-  
-
   const getApiUrlPhoto = "https://api.kapadokyadavet.com";
 
   return (

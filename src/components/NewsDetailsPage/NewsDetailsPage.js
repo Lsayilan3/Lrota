@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import NewsDetailsLeft from "./NewsDetailsLeft";
-import Sidebar from "./Sidebar";
 import { useRouter } from "next/router";
 import axios from "axios";
 
@@ -20,14 +19,15 @@ const NewsDetailsPage = () => {
         console.log(error);
       });
   }, []);
+
   const selectedCategory = categoriesData.find(
     (category) => category.haberlerCategoryId === Number(haberId)
   );
+
   return (
     <section className="news-details">
       <Container>
         <Row>
-      
           {selectedCategory && (
               <NewsDetailsLeft categories={selectedCategory} />
             )}

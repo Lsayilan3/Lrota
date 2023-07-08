@@ -1,16 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Image } from "react-bootstrap";
 
-const SingleGallery = ({ image = "" ,data}) => {
+const SingleGallery = ( {data} ) => {
 
-  
-  const { subTitle,title , photo, } = data || {};
-
-
+  const {  photo } = data || {};
 
   const photoUrl = "https://localhost:44375/WebAPI/";
-
 
   return (
     <li className="animated fadeInUp">

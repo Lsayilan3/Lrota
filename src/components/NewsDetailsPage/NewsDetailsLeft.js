@@ -2,13 +2,6 @@ import newsDetailsPage from "@/data/newsDetailsPage";
 import Link from "next/link";
 import React, { Fragment } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import AuthorOne from "./AuthorOne";
-import CommentForm from "./CommentForm";
-import CommentOne from "./CommentOne";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import axios from "axios";
-import { useState } from "react";
 
 const {
   image,
@@ -25,6 +18,11 @@ const {
 
 const NewsDetailsLeft = ({ categories }) => {
 
+  const photoUrl = "https://localhost:44375/WebAPI/";
+
+  const { textOne, textTwo, textTree, textFour, totalComments, title, userPhoto, name, description, userTwoPhoto, nameTwo,
+    message, userTreePhoto, nameTree, messageTwo, photo
+  } = categories || {};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,30 +32,6 @@ const NewsDetailsLeft = ({ categories }) => {
     console.log(data);
   }
 
-  const router = useRouter();
-  const { haberId } = router.query;
-
-
-  const { textOne, textTwo, textTree, textFour, totalComments, title, userPhoto, name, description, userTwoPhoto, nameTwo,
-    message, userTreePhoto, nameTree, messageTwo, photo
-  } = categories || {};
-  const [categoriesData, setCategoriesData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://localhost:44375/WebAPI/api/haberlerCategories/getall")
-      .then((response) => {
-        setCategoriesData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  const selectedCategory = categoriesData.find(
-    (category) => category.haberlerCategoryId === Number(haberId)
-  );
-
-  const photoUrl = "https://localhost:44375/WebAPI/";
   return (
     <div className="news-details__left">
       <div className="news-details__img">
@@ -183,9 +157,14 @@ const NewsDetailsLeft = ({ categories }) => {
               <div className="comment-form__input-box">
                 <textarea style={{ border: "solid 1px #e8604c", opacity: 0.8 }} name="message" placeholder="Yorum Yaz"></textarea>
               </div>
-              <button type="submit" className="thm-btn comment-form__btn">
-                Yorum Gönder
-              </button>
+              <a href="mailto:kadirvarol_@hotmail.com">
+                <button
+                  type="button"
+                  className="thm-btn comment-form__btn"
+                >
+                  Yorum Gönder
+                </button>
+              </a>
             </Col>
           </Row>
         </form>

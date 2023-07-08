@@ -23,8 +23,6 @@ const AboutOne = () => {
 
   const [data, setData] = useState({ photo: "" });
 
-
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
@@ -39,7 +37,6 @@ const AboutOne = () => {
   }, []);
 
   const photoUrl = "https://localhost:44375/WebAPI/";
-  
 
   return (
     <section className="about-one">
@@ -95,7 +92,7 @@ const AboutOne = () => {
                 ))}
               </ul>
               <a href="contact" className="about-one__btn thm-btn">
-              Şimdi bizimle rezervasyon yapın
+                Şimdi bizimle rezervasyon yapın
               </a>
             </div>
           </Col>

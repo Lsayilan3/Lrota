@@ -37,15 +37,17 @@ const TourDetailsLeft = ({ data }) => {
         console.log(error);
       });
   }, []);
+
   const selectedCategory = dataa.find(
     (category) => category.EnPopulerListCategoryId === Number(populerId)
   );
 
-
   if (!dataa || dataa.length === 0) {
     return <div>Loading...</div>;
   }
+
   const photoUrl = "https://localhost:44375/WebAPI/";
+  
   return (
     <>
       <div className="destinations-details__left">
@@ -162,10 +164,10 @@ const TourDetailsLeft = ({ data }) => {
               <Row>
                 <Col xl={12}>
                   <div style={{ paddingTop: 30 }} className="tour-details-two__overview">
-                    <h3 className="tour-details-two__title">Genel Bakış</h3>
+                    <h2  className="tour-details-two__title">Genel Bakış</h2>
                     <p className="tour-details-two__overview-text">{genel}</p>
                     <div className="tour-details-two__overview-bottom">
-                      <h3 className="tour-details-two-overview__title">Included/Exclude</h3>
+                      <h2 style={{color:"gray"}} className="tour-details-two-overview__title">Dahil/Hariç</h2>
                       <div className="tour-details-two__overview-bottom-inner">
                         <div className="tour-details-two__overview-bottom-left">
                           <ul className="list-unstyled tour-details-two__overview-bottom-list">
@@ -247,7 +249,7 @@ const TourDetailsLeft = ({ data }) => {
                     </div>
                   </div>
                   <div style={{ paddingBottom: 50 }} className="tour-details-two__tour-plan">
-                    <h3 className="tour-details-two__title">Tur Planı</h3>
+                    <h2 className="tour-details-two__title">Tur Planı</h2>
                     <div class="destinations-details__faq" id="accordionPanelsStayOpenExample">
                       <div class="accrodion-grp faq-one-accrodion">
                         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -289,7 +291,7 @@ const TourDetailsLeft = ({ data }) => {
 
                   </div>
                   <div style={{ paddingBottom: 50 }} className="tour-details-two__location">
-                    <h3 className="tour-details-two__title">Tur Planı</h3>
+                    <h2 style={{color:"gray"}} className="tour-details-two__title">Tur Konum</h2>
                     <iframe
                       src={map}
                       className="tour-details-two__location-map"
@@ -305,7 +307,7 @@ const TourDetailsLeft = ({ data }) => {
                   <div style={{ marginBottom: 100, }} className="tour-details__review-score">
                     <div className="tour-details__review-score-ave">
                       <div className="my-auto">
-                        <h3>{superb}</h3>
+                        <h3 style={{marginLeft: 4}}>{superb}</h3>
                         <p>
                           <i className="fa fa-star"></i> Mükemmel
 

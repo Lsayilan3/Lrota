@@ -13,19 +13,19 @@ const TeamOne = () => {
 
   const [data, setData] = useState([]);;
 
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
     } catch (error) {
-      console.log("API çekme hatası ne", error);
+      console.log("API çekme hatası takım", error);
     }
   };
 
   useEffect(() => {
     apiCek();
   }, []);
+  
   return (
     <section className="team-one">
       <div

@@ -1,74 +1,45 @@
-import { destinationsDetailsLeft } from "@/data/destinationsDetails";
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import DestinationsDetailsFaq from "./DestinationsDetailsFaq";
-import { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
 import { useRouter } from "next/router";
 
-const { image, discoverTitle, texts, overviewTitle, overviews, faqs } =
-  destinationsDetailsLeft;
 
 
-const DestinationsDetailsLeft = ({ categories, detayy }) => {
+const DestinationsDetailsLeft = ({ categories }) => {
   const router = useRouter();
-  const { categoryId } = router.query;
-
 
   const { textOne, textTwo, detayLeftOne, detayRightOne, detayLeftTwo, detayRightTwo, detayLeftTree, detayRightTree,
     detayLeftFour, detayRightFour, detayLeftFive, detayRightFive, questionOne, answerOne, questionTwo, answerTwo,
-    questionTree, answerTree, photo ,photoBir,photoIki,photoUc,photoDort} =
+    questionTree, answerTree, photo, photoBir, photoIki, photoUc, photoDort } =
     categories || {};
 
-  const [categoriesData, setCategoriesData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://localhost:44375/WebAPI/api/hedefListtCategories/getall")
-      .then((response) => {
-        setCategoriesData(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  const selectedCategory = categoriesData.find(
-    (category) => category.hedefListtCategoryId === Number(categoryId)
-  );
-
   const photoUrl = "https://localhost:44375/WebAPI/";
+  
   return (
     <div className="destinations-details__left">
       <div className="destinations-details__img">
 
-<Row className="mb-4">
-  <Col xs={4}>
-    <Image src={photoUrl + photoIki} alt={photoIki || ""} />
-  </Col>
-  <Col xs={4}>
-    <Image src={photoUrl + photoUc} alt={photoUc || ""} />
-  </Col>
-  <Col xs={4}>
-    <Image src={photoUrl + photoDort} alt={photoDort || ""} />
-  </Col>
-</Row>
-<Row >
-  <Col xs={6}>
-    <Image src={photoUrl + photo} alt={photo || ""} />
-  </Col>
-  <Col xs={6}>
-    <Image src={photoUrl + photoBir} alt={photoBir || ""} />
-  </Col>
-</Row>
-
-
-
+        <Row className="mb-4">
+          <Col xs={4}>
+            <Image src={photoUrl + photoIki} alt={photoIki || ""} />
+          </Col>
+          <Col xs={4}>
+            <Image src={photoUrl + photoUc} alt={photoUc || ""} />
+          </Col>
+          <Col xs={4}>
+            <Image src={photoUrl + photoDort} alt={photoDort || ""} />
+          </Col>
+        </Row>
+        <Row >
+          <Col xs={6}>
+            <Image src={photoUrl + photo} alt={photo || ""} />
+          </Col>
+          <Col xs={6}>
+            <Image src={photoUrl + photoBir} alt={photoBir || ""} />
+          </Col>
+        </Row>
       </div>
       <div className="destinations-details__discover">
         <h3 className="destinations-details__title">Keşfedin</h3>
-
         <p
 
           className="destinations-details__discover-text"
@@ -76,17 +47,14 @@ const DestinationsDetailsLeft = ({ categories, detayy }) => {
           {textOne}
         </p>
         <p
-
           className="destinations-details__discover-text"
         >
           {textTwo}
         </p>
-
       </div>
-      <div style={{paddingBottom:22}}  className="destinations-details__overview">
-        <h3 style={{paddingBottom:40}} className="destinations-details__title">Genel Bakış</h3>
+      <div style={{ paddingBottom: 22 }} className="destinations-details__overview">
+        <h3 style={{ paddingBottom: 40 }} className="destinations-details__title">Genel Bakış</h3>
         <ul className="list-unstyled destinations-details__overview-list">
-
           <li>
             <div className="destinations-details__overview-left">
               <p>{detayLeftOne}</p>

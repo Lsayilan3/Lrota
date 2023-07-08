@@ -1,14 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { SwiperSlide } from "swiper/react";
 
-const SingleSlide = ({ slide = {},data }) => {
-  const { bg } = slide;
+const SingleSlide = ({ data }) => {
 
-  const { subTitle,title , photo, } = data || {};
-
-
+  const { subTitle, title, photo, } = data || {};
 
   const photoUrl = "https://localhost:44375/WebAPI/";
 

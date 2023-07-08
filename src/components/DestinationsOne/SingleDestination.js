@@ -7,7 +7,6 @@ const SingleDestination = ({ data, col }) => {
   const { categoryId, photo, title,tours } = data || {};
 
   const [spots, setSpots] = useState([]);
-  const [bphoto, setBphoto] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,8 +27,6 @@ const SingleDestination = ({ data, col }) => {
   }, [categoryId]);
 
   const photoUrl = "https://localhost:44375/WebAPI/";
-
-
 
   return (
     <Col xl={col} lg={col}>

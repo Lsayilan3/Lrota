@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-
-
+import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 import axios from "axios";
 import TourDetailsLeft from "./TourDetailsLeft";
@@ -22,10 +20,13 @@ const DestinationsDetailsPage = () => {
         console.log(error);
       });
   }, []);
+
   const selectedCategory = categoriesData.find(
     (category) => category.enPopulerListtCategoryId === Number(populerId)
   );
+
   const photoUrl = "https://localhost:44375/WebAPI/";
+
   return (
     <section className="destinations-details">
       <Container>

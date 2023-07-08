@@ -49,8 +49,6 @@ const BrandOne = () => {
 
   const [data, setData] = useState([]);
 
-
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
