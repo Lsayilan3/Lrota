@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
 
-const typeOptions = ["Adventure", "Wildlife", "Sightseeing"].map((it) => ({
+const typeOptions = ["Macera", "Yaban Hayatı", "Manzara"].map((it) => ({
   value: it,
   label: it,
 }));
@@ -62,7 +62,7 @@ const customStyle = {
 
 const TourSearchForm = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const [selected, setSelected] = useState("Adventure");
+  const [selected, setSelected] = useState("Macera");
 
   const handleSelect = ({ value }) => {
     setSelected(value);
@@ -84,16 +84,16 @@ const TourSearchForm = () => {
       <div className="tour-search-one__inner">
         <div className="tour-search-one__inputs">
           <div className="tour-search-one__input-box">
-            <label htmlFor="place">Where to</label>
+            <label htmlFor="place">Nereye</label>
             <input
               type="text"
-              placeholder="Enter keywords"
+              placeholder="Anahtar kelimeleri girin"
               name="place"
               id="place"
             />
           </div>
           <div className="tour-search-one__input-box">
-            <label>When</label>
+            <label>Ne zaman</label>
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -102,7 +102,7 @@ const TourSearchForm = () => {
             />
           </div>
           <div className="tour-search-one__input-box tour-search-one__input-box-last">
-            <label htmlFor="type">Type</label>
+            <label htmlFor="type">Tip</label>
             <Select
               defaultValue={typeOptions[0]}
               name="type"
@@ -120,7 +120,7 @@ const TourSearchForm = () => {
         </div>
         <div className="tour-search-one__btn-wrap">
           <a href="/tours">
-            <button  className="thm-btn tour-search-one__btn" type="button">Find now</button>
+            <button  className="thm-btn tour-search-one__btn" type="button">Keşfet</button>
           </a>
         </div>
       </div>

@@ -37,7 +37,7 @@ const Information = () => {
       <span className="icon-place"></span>
     </div>
     <div className="information__text" >    
-      <a
+      <a style={{cursor:"pointer"}}
       onMouseEnter={(e) => e.target.style.color = '#e8604c'}
       onMouseLeave={(e) => e.target.style.color = 'gray'}
       >
