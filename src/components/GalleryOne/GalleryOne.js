@@ -4,7 +4,6 @@ import SingleGallery from "./SingleGallery";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import Preloader from "../Preloader/Preloader";
 
 const { bg, galleryData } = galleryOne;
 
@@ -12,13 +11,11 @@ const GalleryOne = () => {
   const apiUrl = "https://api.limitsizrota.com/api/mediaPhotoes";
 
   const [data, setData] = useState([]);;
-  const [loading, setLoading] = useState(true);
 
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
-      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası ne", error);
     }
@@ -30,7 +27,6 @@ const GalleryOne = () => {
 
   return (
     <section className="gallery-one">
-      <Preloader loading={loading} />
       <div
         className="gallery-one-bg"
         style={{ backgroundImage: `url(${bg.src})` }}

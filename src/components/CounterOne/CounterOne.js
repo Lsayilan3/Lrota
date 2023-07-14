@@ -4,8 +4,10 @@ import VisibilityCountUp from "../VisibilityCountUp/VisibilityCountUp";
 
 const CounterOne = () => {
   return (
-    <div className="">
-
+    <div className="counter-one">
+      <div className="counter-one__container">
+    
+      </div>
     </div>
   );
 };

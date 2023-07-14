@@ -9,9 +9,7 @@ import { Image } from "react-bootstrap";
 const SingleTestimonial = ({ data }) => {
 
   const { description, review, name, role, photo } = data || {};
-
   const photoUrl = "https://api.limitsizrota.com";
-  
   return (
     <div>
       <div style={{ userSelect: "none" }} className="testimonial-one__single">

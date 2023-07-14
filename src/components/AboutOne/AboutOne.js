@@ -4,7 +4,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Preloader from "../Preloader/Preloader";
 
 const {
   about,
@@ -24,13 +23,10 @@ const AboutOne = () => {
 
   const [data, setData] = useState({ photo: "" });
 
-  const [loading, setLoading] = useState(true);
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data[0]);
-      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası ne", error);
     }
@@ -40,11 +36,10 @@ const AboutOne = () => {
     apiCek();
   }, []);
 
-  const photoUrl = "https://api.limitsizrota.com/api";
+  const photoUrl = "https://api.limitsizrota.com";
 
   return (
     <section className="about-one">
-      <Preloader loading={loading} />
       <div className="about-one-shape-1 animated slideInLeft">
         <Image src={shape1.src} alt="" />
       </div>

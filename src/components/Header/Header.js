@@ -38,7 +38,7 @@ const Header = ({ pageTitle }) => {
               <div className="main-header__top-right-inner">
                 <div className="main-header__top-right-social">
                   {social.map(({ icon, link }, index) => (
-                    <a href={link} target="_blank" rel="noopener noreferrer" key={index}>
+                    <a href={link} target="_blank" key={index}>
                       <i className={`fab ${icon}`}></i>
                     </a>
                   ))}

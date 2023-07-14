@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Preloader from "../Preloader/Preloader";
 
 SwiperCore.use([Autoplay]);
 
@@ -46,13 +45,10 @@ const BrandTwo = ({ brandThree = false }) => {
 
   const [data, setData] = useState([]);
 
-  const [loading, setLoading] = useState(true);
-
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
-      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası ne", error);
     }
@@ -65,7 +61,6 @@ const BrandTwo = ({ brandThree = false }) => {
   const photoUrl = "https://api.limitsizrota.com";
   return (
     <section className={brandThree ? "brand-two brand-three" : "brand-two"}>
-      <Preloader loading={loading} />
       <Container>
         <Swiper className="thm-swiper__slider" {...slideOptions}>
           <div className="swiper-wrapper">
