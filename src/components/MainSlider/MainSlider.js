@@ -28,7 +28,7 @@ const MainSlider = () => {
 
   const apiUrl = "https://api.limitsizrota.com/api/sliders";
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]);;
 
   const apiCek = async () => {
     try {

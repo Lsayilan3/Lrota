@@ -20,7 +20,7 @@ const SingleSlide = ({ slide = {},data }) => {
       <Container>
         <div className="swiper-slide-inner">
           <div className="tour-details-slider_icon">
-            <a href="https://www.youtube.com/@limitsizrota" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@limitsizrota" target="_blank">
               <i className="fab fa-youtube"></i>
             </a>
             <a href="#">

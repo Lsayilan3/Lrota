@@ -7,20 +7,20 @@ import Preloader from "../Preloader/Preloader";
 
 const DestinationsPage = () => {
   const apiUrl = "https://api.limitsizrota.com/api/hedefLists";
+  const [loading, setLoading] = useState(true);
 
   const [data, setData] = useState([]);
   const [colValues, setColValues] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
+      setLoading(false);
 
       // Backend'den gelen verilere göre col değerlerini ayarla
       const colValuesFromBackend = response.data.map((destination) => destination.col);
       setColValues(colValuesFromBackend);
-      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası", error);
     }
@@ -30,11 +30,11 @@ const DestinationsPage = () => {
     apiCek();
   }, []);
 
-  const getApiUrlPhoto = "https://api.limitsizrota.com";
+  const getApiUrlPhoto = "https://api.kapadokyadavet.com";
 
   return (
     <section className="destinations-one destinations-page">
-      <Preloader loading={loading} />
+ <Preloader loading={loading} />
       <Container>
         <Masonry className="row position-relative">
           {data.map((destination, index) => (

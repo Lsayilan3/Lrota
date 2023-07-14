@@ -29,7 +29,7 @@ const NewsDetailsPage = () => {
 
   return (
     <section className="news-details">
-       <Preloader loading={loading} />
+      <Preloader loading={loading} />
       <Container>
         <Row>
           {selectedCategory && (

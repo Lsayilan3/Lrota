@@ -12,7 +12,7 @@ const ReviewScoreBar = () => {
     }
   };
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerListCategories";
+  const apiUrl = "https://api.limitsizrota.com/api/enPopulerListCategories";
   const [dataa, setDataa] = useState([]);
 
   useEffect(() => {

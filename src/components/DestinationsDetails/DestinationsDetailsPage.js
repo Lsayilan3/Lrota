@@ -16,7 +16,6 @@ const DestinationsDetailsPage = () => {
       .get("https://api.limitsizrota.com/api/hedefListtCategories/getall")
       .then((response) => {
         setCategoriesData(response.data);
-        console.log(response.data);
         setLoading(false);
       })
       .catch((error) => {

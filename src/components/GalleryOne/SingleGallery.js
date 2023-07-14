@@ -12,7 +12,7 @@ const SingleGallery = ( {data} ) => {
     <div className="gallery-one__img-box">
       <Image src={photoUrl + photo} alt={photo} />
       <div className="gallery-one__iocn">
-        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/limitsiz_rota/">
+        <a target="_blank" href="https://www.instagram.com/limitsiz_rota/">
           <i className="fab fa-instagram"></i>
         </a>
       </div>

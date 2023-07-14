@@ -4,20 +4,17 @@ import SingleNewsOne from "../NewsOne/SingleNewsOne";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import Preloader from "../Preloader/Preloader";
 
 const NewsPage = () => {
 
   const apiUrl = "https://api.limitsizrota.com/api/haberlers";
 
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
-      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası haberler", error);
     }
@@ -29,7 +26,6 @@ const NewsPage = () => {
 
   return (
     <section className="news-one">
-       <Preloader loading={loading} />
       <Container>
         <Row>
           {data.map((data) => (
