@@ -11,7 +11,7 @@ const DestinationsDetailsPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:44375/WebAPI/api/enPopulerListtCategories/getall")
+      .get("https://api.limitsizrota.com/api/enPopulerListtCategories/getall")
       .then((response) => {
         setCategoriesData(response.data);
         console.log(response.data);
@@ -25,7 +25,7 @@ const DestinationsDetailsPage = () => {
     (category) => category.enPopulerListtCategoryId === Number(populerId)
   );
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
 
   return (
     <section className="destinations-details">

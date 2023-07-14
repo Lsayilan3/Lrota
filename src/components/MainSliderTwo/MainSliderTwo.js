@@ -5,6 +5,7 @@ import SingleSlide from "./SingleSlide";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import Preloader from "../Preloader/Preloader";
 
 SwiperCore.use([Autoplay, Navigation, EffectFade]);
 
@@ -23,14 +24,16 @@ const mainSlideOptions = {
 };
 
 const MainSliderTwo = () => {
-  const apiUrl = "https://localhost:44375/WebAPI/api/sliderTwoes";
+  const apiUrl = "https://api.limitsizrota.com/api/sliderTwoes";
 
-  const [data, setData] = useState([]);;
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
+      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası main slider two", error);
     }
@@ -42,6 +45,7 @@ const MainSliderTwo = () => {
 
   return (
     <section className="main-slider tour-details-slider">
+      <Preloader loading={loading} />
       <Swiper className="thm-swiper__slider" {...mainSlideOptions}>
         <div className="swiper-wrapper">
           {data.map((data) => (

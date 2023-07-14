@@ -9,7 +9,7 @@ import { useEffect } from "react";
 const { bg, tagline, title, teams } = teamOne;
 
 const TeamOne = () => {
-  const apiUrl = "https://localhost:44375/WebAPI/api/teams";
+  const apiUrl = "https://api.limitsizrota.com/api/teams";
 
   const [data, setData] = useState([]);;
 

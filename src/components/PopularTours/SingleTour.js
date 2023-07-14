@@ -14,10 +14,10 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
     const fetchData = async () => {
       try {
         if (populerId) {
-          const response = await axios.get(`https://localhost:44375/WebAPI/api/enPopulerListts/getlist?populerId=${populerId}`);
+          const response = await axios.get(`https://api.limitsizrota.com/api/enPopulerListts/getlist?populerId=${populerId}`);
           setSpots(response.data.data);
         } else {
-          const response = await axios.get("https://localhost:44375/WebAPI/api/enPopulerLists/getall");
+          const response = await axios.get("https://api.limitsizrota.com/api/enPopulerLists/getall");
           setSpots(response.data);
         } 
       } catch (error) {
@@ -27,7 +27,7 @@ const SingleTour = ({ tour = {}, userSelect = false }) => {
     fetchData();
   }, [populerId]);
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
   
   return (
     <div>

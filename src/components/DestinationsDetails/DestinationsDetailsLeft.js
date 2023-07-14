@@ -12,7 +12,7 @@ const DestinationsDetailsLeft = ({ categories }) => {
     questionTree, answerTree, photo, photoBir, photoIki, photoUc, photoDort } =
     categories || {};
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
   
   return (
     <div className="destinations-details__left">
@@ -99,39 +99,39 @@ const DestinationsDetailsLeft = ({ categories }) => {
         </ul>
       </div>
 
-      <div class="destinations-details__faq" id="accordionPanelsStayOpenExample">
-        <div class="accrodion-grp faq-one-accrodion">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <div className="destinations-details__faq" id="accordionPanelsStayOpenExample">
+        <div className="accrodion-grp faq-one-accrodion">
+          <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
               {questionOne}
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div className="accordion-body">
               {answerOne}
             </div>
           </div>
         </div>
-        <div class="accrodion-grp faq-one-accrodion">
-          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+        <div className="accrodion-grp faq-one-accrodion">
+          <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
               {questionTwo}
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div className="accordion-body">
               {answerTwo}
             </div>
           </div>
         </div>
-        <div class="accrodion-grp faq-one-accrodion">
-          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        <div className="accrodion-grp faq-one-accrodion">
+          <h2 className="accordion-header" id="panelsStayOpen-headingThree">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
               {questionTree}
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div className="accordion-body">
               {answerTree}
             </div>
           </div>

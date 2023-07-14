@@ -3,18 +3,21 @@ import { Container } from "react-bootstrap";
 import DestinationsDetailsLeft from "./DestinationsDetailsLeft";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Preloader from "../Preloader/Preloader";
 
 const DestinationsDetailsPage = () => {
   const router = useRouter();
   const { categoryId } = router.query;
   const [categoriesData, setCategoriesData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get("https://localhost:44375/WebAPI/api/hedefListtCategories/getall")
+      .get("https://api.limitsizrota.com/api/hedefListtCategories/getall")
       .then((response) => {
         setCategoriesData(response.data);
         console.log(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log("Api Çekme Hatası Hedeflist Category",error);
@@ -27,6 +30,7 @@ const DestinationsDetailsPage = () => {
 
   return (
     <section className="destinations-details">
+      <Preloader loading={loading} />
       <Container>
         {selectedCategory && (
           <DestinationsDetailsLeft categories={selectedCategory} />

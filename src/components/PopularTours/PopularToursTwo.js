@@ -10,7 +10,7 @@ const { tagline, title, popularTours } = popularToursTwo;
 
 const PopularToursTwo = ({ toursPage = false }) => {
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerLists";
+  const apiUrl = "https://api.limitsizrota.com/api/enPopulerLists";
 
   const [popularTours, setPopularTours] = useState([]);
   const [colValues, setColValues] = useState([]);

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Preloader from "../Preloader/Preloader";
 
 SwiperCore.use([Autoplay]);
 
@@ -45,14 +46,17 @@ const { bg, brands } = brandOne;
 
 const BrandOne = () => {
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/partners";
+  const apiUrl = "https://api.limitsizrota.com/api/partners";
 
   const [data, setData] = useState([]);
+
+  const [loading, setLoading] = useState(true);
 
   const apiCek = async () => {
     try {
       const response = await axios.get(apiUrl + "/getAll");
       setData(response.data);
+      setLoading(false);
     } catch (error) {
       console.log("API çekme hatası ne", error);
     }
@@ -62,9 +66,10 @@ const BrandOne = () => {
     apiCek();
   }, []);
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
   return (
     <section className="brand-one">
+      <Preloader loading={loading} />
       <div
         className="brand-one-shape"
         style={{ backgroundImage: `url(${bg.src})` }}

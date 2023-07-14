@@ -11,7 +11,7 @@ const {  newsData } = newsOne;
 
 const NewsOne = () => {
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/haberlers";
+  const apiUrl = "https://api.limitsizrota.com/api/haberlers";
 
   const [data, setData] = useState([]);
   const [colValues, setColValues] = useState([]);
@@ -34,7 +34,7 @@ const NewsOne = () => {
     apiCek();
   }, []);
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
   return (
     <section className="news-one">
       <Container>

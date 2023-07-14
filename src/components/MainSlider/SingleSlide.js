@@ -7,7 +7,7 @@ const SingleSlide = ({ data }) => {
 
   const { subTitle, title, photo, } = data || {};
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
 
   return (
     <SwiperSlide>

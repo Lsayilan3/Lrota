@@ -1,10 +1,9 @@
-import { tourDetailsOne } from "@/data/tourDetailsPage";
+import Link from 'next/link';
 import { tourDetailsLeft } from "@/data/tourDetailsPage";
 import React, { useState } from "react";
 import { Col, Container, Row, Image } from "react-bootstrap";
 import ReviewForm from "./ReviewForm";
 import ReviewScoreBar from "./ReviewScoreBar";
-import SingleComment from "./SingleComment";
 import axios from "axios";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -23,13 +22,14 @@ const TourDetailsLeft = ({ data }) => {
     overviewListTree, overviewListFour, overviewListFive, overviewListSix, overviewListSeven, overviewListEight, titleTwo, textTwo,
     titleTree, textTree, titleFour, textFour, hizmetler, hizmetlerPuan, konum, konumPuan, kolayliklar, kolayliklarPuan,
     fiyat, fiyatPuan, yiyecek, yiyecekPuan, categoryName, map, genel, photoBir, photoIki, photoUc } = data || {};
-  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerListCategories";
-  const [dataa, setDataa] = useState([]);
 
+  const apiUrl = "https://api.limitsizrota.com/api/enPopulerListCategories";
+
+  const [dataa, setDataa] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://localhost:44375/WebAPI/api/enPopulerListtCategories/getall")
+      .get("https://api.limitsizrota.com/api/enPopulerListtCategories/getall")
       .then((response) => {
         setDataa(response.data);
       })
@@ -46,8 +46,8 @@ const TourDetailsLeft = ({ data }) => {
     return <div>Loading...</div>;
   }
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
-  
+  const photoUrl = "https://api.limitsizrota.com";
+
   return (
     <>
       <div className="destinations-details__left">
@@ -150,9 +150,11 @@ const TourDetailsLeft = ({ data }) => {
                           </ul>
                         </div>
                         <div className="tour-details__bottom-right">
-                          <a href="/contact">
-                            <i className="fas fa-share"></i>iletişim
-                          </a>
+                          <Link href="/contact">
+                            <a>
+                              <i className="fas fa-share"></i> İletişim
+                            </a>
+                          </Link>
                         </div>
                       </div>
                     </Col>
@@ -164,10 +166,10 @@ const TourDetailsLeft = ({ data }) => {
               <Row>
                 <Col xl={12}>
                   <div style={{ paddingTop: 30 }} className="tour-details-two__overview">
-                    <h2  className="tour-details-two__title">Genel Bakış</h2>
+                    <h2 className="tour-details-two__title">Genel Bakış</h2>
                     <p className="tour-details-two__overview-text">{genel}</p>
                     <div className="tour-details-two__overview-bottom">
-                      <h2 style={{color:"gray"}} className="tour-details-two-overview__title">Dahil/Hariç</h2>
+                      <h2 style={{ color: "gray" }} className="tour-details-two-overview__title">Dahil/Hariç</h2>
                       <div className="tour-details-two__overview-bottom-inner">
                         <div className="tour-details-two__overview-bottom-left">
                           <ul className="list-unstyled tour-details-two__overview-bottom-list">
@@ -250,39 +252,39 @@ const TourDetailsLeft = ({ data }) => {
                   </div>
                   <div style={{ paddingBottom: 50 }} className="tour-details-two__tour-plan">
                     <h2 className="tour-details-two__title">Tur Planı</h2>
-                    <div class="destinations-details__faq" id="accordionPanelsStayOpenExample">
-                      <div class="accrodion-grp faq-one-accrodion">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <div className="destinations-details__faq" id="accordionPanelsStayOpenExample">
+                      <div className="accrodion-grp faq-one-accrodion">
+                        <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+                          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                             {titleTwo}
                           </button>
                         </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                          <div class="accordion-body">
+                        <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                          <div className="accordion-body">
                             {textTwo}
                           </div>
                         </div>
                       </div>
-                      <div class="accrodion-grp faq-one-accrodion">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                      <div className="accrodion-grp faq-one-accrodion">
+                        <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                             {titleTree}
                           </button>
                         </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                          <div class="accordion-body">
+                        <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                          <div className="accordion-body">
                             {textTree}
                           </div>
                         </div>
                       </div>
-                      <div class="accrodion-grp faq-one-accrodion">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      <div className="accrodion-grp faq-one-accrodion">
+                        <h2 className="accordion-header" id="panelsStayOpen-headingThree">
+                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
                             {titleFour}
                           </button>
                         </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                          <div class="accordion-body">
+                        <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                          <div className="accordion-body">
                             {textFour}
                           </div>
                         </div>
@@ -291,7 +293,7 @@ const TourDetailsLeft = ({ data }) => {
 
                   </div>
                   <div style={{ paddingBottom: 50 }} className="tour-details-two__location">
-                    <h2 style={{color:"gray"}} className="tour-details-two__title">Tur Konum</h2>
+                    <h2 style={{ color: "gray" }} className="tour-details-two__title">Tur Konum</h2>
                     <iframe
                       src={map}
                       className="tour-details-two__location-map"
@@ -307,7 +309,7 @@ const TourDetailsLeft = ({ data }) => {
                   <div style={{ marginBottom: 100, }} className="tour-details__review-score">
                     <div className="tour-details__review-score-ave">
                       <div className="my-auto">
-                        <h3 style={{marginLeft: 4}}>{superb}</h3>
+                        <h3 style={{ marginLeft: 4 }}>{superb}</h3>
                         <p>
                           <i className="fa fa-star"></i> Mükemmel
 

@@ -5,7 +5,7 @@ const SingleTeam = ({ data }) => {
 
   const { name, title, photo, hrefBir, hrefIki, hrefUc } = data || {};
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
 
   return (
     <Col xl={3} lg={6} md={6} className="animated fadeInLeft">

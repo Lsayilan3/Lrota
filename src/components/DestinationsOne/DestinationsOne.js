@@ -4,7 +4,7 @@ import SingleDestination from "./SingleDestination";
 import axios from "axios";
 
 const DestinationsOne = () => {
-  const apiUrl = "https://localhost:44375/WebAPI/api/hedefLists";
+  const apiUrl = "https://api.limitsizrota.com/api/hedefLists";
 
   const [data, setData] = useState([]);
   const [colValues, setColValues] = useState([]);
@@ -27,7 +27,7 @@ const DestinationsOne = () => {
     apiCek();
   }, []);
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
 
   return (
     <section className="destinations-one">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CountUp from "react-countup";
+
 import VisibilitySensor from "react-visibility-sensor";
 
 const VisibilityCountUp = ({ count }) => {
@@ -17,7 +17,7 @@ const VisibilityCountUp = ({ count }) => {
       delayedCall={true}
       onChange={onVisibilityChange}
     >
-      <CountUp start={0} end={countStart ? count : 0} duration={2} />
+      <h1></h1>
     </VisibilitySensor>
   );
 };

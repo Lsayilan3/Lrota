@@ -8,7 +8,7 @@ const SingleSlide = ({ slide = {},data }) => {
 
 
 
-  const photoUrl = "https://localhost:44375/WebAPI";
+  const photoUrl = "https://api.limitsizrota.com";
   return (
     <SwiperSlide>
       <div
@@ -20,7 +20,7 @@ const SingleSlide = ({ slide = {},data }) => {
       <Container>
         <div className="swiper-slide-inner">
           <div className="tour-details-slider_icon">
-            <a href="https://www.youtube.com/@limitsizrota" target="_blank">
+            <a href="https://www.youtube.com/@limitsizrota" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-youtube"></i>
             </a>
             <a href="#">

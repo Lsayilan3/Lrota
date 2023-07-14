@@ -36,7 +36,7 @@ const { shape1, shape2, tagline, title, testimonials, bg } = testimonialOne;
 
 const TestimonialOne = ({ aboutPage = false }) => {
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/hikayelers";
+  const apiUrl = "https://api.limitsizrota.com/api/hikayelers";
 
   const [dataa, setDataa] = useState([]);
 
@@ -54,7 +54,7 @@ const TestimonialOne = ({ aboutPage = false }) => {
   }, []);
 
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
   return (
     <section
       className={

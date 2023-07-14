@@ -14,10 +14,10 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
     const fetchData = async () => {
       try {
         if (haberId) {
-          const response = await axios.get(`https://localhost:44375/WebAPI/api/haberlers/getlist?haberId=${haberId}`);
+          const response = await axios.get(`https://api.limitsizrota.com/api/haberlers/getlist?haberId=${haberId}`);
           setSpots(response.data.data);
         } else {
-          const response = await axios.get("https://localhost:44375/WebAPI/api/haberlers/getall");
+          const response = await axios.get("https://api.limitsizrota.com/api/haberlers/getall");
           setSpots(response.data);
         }
       } catch (error) {
@@ -27,7 +27,7 @@ const SingleNewsOne = ({ news = {}, newsTwo = false, data }) => {
     fetchData();
   }, [haberId]);
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
   return (
     <div
 

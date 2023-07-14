@@ -37,7 +37,7 @@ const settings = {
 
 const PopularTours = () => {
 
-  const apiUrl = "https://localhost:44375/WebAPI/api/enPopulerLists";
+  const apiUrl = "https://api.limitsizrota.com/api/enPopulerLists";
 
   const [popularTours, setPopularTours] = useState([]);
 

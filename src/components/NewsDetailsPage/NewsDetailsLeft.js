@@ -18,7 +18,7 @@ const {
 
 const NewsDetailsLeft = ({ categories }) => {
 
-  const photoUrl = "https://localhost:44375/WebAPI/";
+  const photoUrl = "https://api.limitsizrota.com";
 
   const { textOne, textTwo, textTree, textFour, totalComments, title, userPhoto, name, description, userTwoPhoto, nameTwo,
     message, userTreePhoto, nameTree, messageTwo, photo
@@ -90,7 +90,7 @@ const NewsDetailsLeft = ({ categories }) => {
         </p>
         <div className="news-details__social-list">
           {socials.map(({ id, icon, href }) => (
-            <a href={href} target="_blank" key={id}>
+            <a href={href} target="_blank" rel="noopener noreferrer" key={id}>
               <i className={icon}></i>
             </a>
           ))}

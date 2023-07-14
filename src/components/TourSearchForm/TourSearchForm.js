@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
+import Link from 'next/link';
 
 const typeOptions = ["Macera", "Yaban Hayatı", "Manzara"].map((it) => ({
   value: it,
@@ -119,9 +120,11 @@ const TourSearchForm = () => {
           </div>
         </div>
         <div className="tour-search-one__btn-wrap">
-          <a href="/tours">
+        <Link href="/tours">
+          <a>
             <button  className="thm-btn tour-search-one__btn" type="button">Keşfet</button>
           </a>
+          </Link>
         </div>
       </div>
     </form>
